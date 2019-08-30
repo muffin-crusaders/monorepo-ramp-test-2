@@ -1,4 +1,4 @@
-import '@claviska/jquery-minicolors';
+// import '@claviska/jquery-minicolors';
 import nameToHex from './names-to-hex.js';
 
 /**
@@ -10,9 +10,7 @@ import nameToHex from './names-to-hex.js';
  * Directive wrapper for jQuery MiniColors.
  *
  */
-angular
-    .module('app.ui')
-    .directive('rvMinicolors', rvMinicolors);
+angular.module('app.ui').directive('rvMinicolors', rvMinicolors);
 
 function rvMinicolors(graphicsService) {
     const directive = {
@@ -25,10 +23,12 @@ function rvMinicolors(graphicsService) {
     return directive;
 
     function link(scope, el, attrbs, ngModel) {
-        el.minicolors(angular.extend(scope.options, {
-            hideSpeed: 0,
-            showSpeed: 0
-        }));
+        el.minicolors(
+            angular.extend(scope.options, {
+                hideSpeed: 0,
+                showSpeed: 0
+            })
+        );
 
         el.on('focus', onFocus);
         el.on('blur', onBlur);
@@ -50,7 +50,7 @@ function rvMinicolors(graphicsService) {
 
             /*
                 need to use ngModel to set the view value because of inconsistency with minicolors replacing
-                first character to a '0' 
+                first character to a '0'
             */
             ngModel.$setViewValue(color);
             ngModel.$render();
@@ -59,11 +59,12 @@ function rvMinicolors(graphicsService) {
         function onKeyUp() {
             let color = ngModel.$viewValue;
             color = _colorHex(color);
-            el.siblings().filter('.minicolors-swatch').css('background-color', color);
+            el.siblings()
+                .filter('.minicolors-swatch')
+                .css('background-color', color);
         }
 
         function _colorHex(color) {
-
             // remove any whitespace in color name
             color = color.replace(/\s/g, '');
 
