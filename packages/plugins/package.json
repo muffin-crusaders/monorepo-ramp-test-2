@@ -1,9 +1,10 @@
 {
-    "name": "@fgpv/rv-plugins",
+    "name": "plugins",
     "version": "3.1.0",
     "description": "Plugins for the RAMP viewer supported by the core team.",
     "scripts": {
-        "build": "webpack --config ./bin/build/webpack.config.js && npm run prepublishOnly",
+        "build": "",
+        "build_": "webpack --config ./bin/build/webpack.config.js && npm run prepublishOnly",
         "serve": "webpack-dev-server --progress --hot --config ./bin/build/webpack.config.js",
         "test": "tsc && intern",
         "sass": "bash ./compileSass.sh",
@@ -11,10 +12,7 @@
         "postversion": "git push upstream v%npm_package_version%",
         "nonPublishedBuild": "webpack --config ./bin/build/webpack.config.js"
     },
-    "files": [
-        "lib/**/*",
-        "dist/**/*"
-    ],
+    "files": ["lib/**/*", "dist/**/*"],
     "main": "lib/index.js",
     "types": "lib/index.d.ts",
     "publishConfig": {
@@ -24,10 +22,7 @@
         "type": "git",
         "url": "git+https://github.com/fgpv-vpgf/plugins.git"
     },
-    "keywords": [
-        "plugins",
-        "RAMP"
-    ],
+    "keywords": ["plugins", "RAMP"],
     "author": "The RAMP Core Team",
     "license": "ISC",
     "bugs": {

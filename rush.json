@@ -366,10 +366,10 @@
             "packageName": "geosearch",
             "projectFolder": "packages/geosearch"
         },
-        /* {
+        {
             "packageName": "plugins",
             "projectFolder": "packages/plugins"
-        }, */
+        },
         {
             "packageName": "ramp",
             "projectFolder": "packages/ramp"

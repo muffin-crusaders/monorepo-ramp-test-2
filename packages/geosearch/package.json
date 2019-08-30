@@ -25,7 +25,8 @@
         "webpack-cli": "3.0.8"
     },
     "scripts": {
-        "build": "webpack",
+        "build": "",
+        "build_": "webpack",
         "test": "jest",
         "docute": "docute",
         "fetchdata": "node scripts/typeCompiler.js && node scripts/provinceCompiler.js"
