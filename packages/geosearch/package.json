@@ -26,6 +26,7 @@
     },
     "scripts": {
         "build": "",
+        "serve": "",
         "build_": "webpack",
         "test": "jest",
         "docute": "docute",

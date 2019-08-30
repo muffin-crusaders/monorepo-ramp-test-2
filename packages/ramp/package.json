@@ -6,7 +6,6 @@
     "repository": "https://github.com/fgpv-vpgf/fgpv-vpgf",
     "license": "MIT",
     "dependencies": {
-        "@claviska/jquery-minicolors": "github:claviska/jquery-minicolors",
         "@fgpv/rv-plugins": "3.1.0",
         "@flowjs/ng-flow": "2.7.8",
         "angular": "1.7.5",
@@ -21,7 +20,7 @@
         "csvtojson": "1.1.11",
         "dotjem-angular-tree": "github:dotJEM/angular-tree",
         "file-saver": "2.0.0",
-        "geoApi": "github:fgpv-vpgf/geoApi#v3.1.0",
+        "geoapi": "3.1.0",
         "html2canvas": "^1.0.0-rc.3",
         "imports-loader": "0.8.0",
         "linkifyjs": "2.1.7",
@@ -31,7 +30,10 @@
         "rxjs": "6.4.0",
         "rz-geosearch": "3.0.1",
         "screenfull": "4.0.1",
-        "svg.textflow.js": "github:fgpv-vpgf/svg.textflow.js"
+        "svg.textflow.js": "github:fgpv-vpgf/svg.textflow.js",
+        "ag-grid-community": "19.0.0",
+        "jquery": "3.4.1",
+        "babel-runtime": "6.26.0"
     },
     "devDependencies": {
         "@types/angular": "1.6.53",
@@ -84,7 +86,8 @@
         "xml2js": "0.4.19",
         "xml2js-xpath": "0.9.0",
         "z-schema": "3.24.2",
-        "zip-webpack-plugin": "3.0.0"
+        "zip-webpack-plugin": "3.0.0",
+        "webpack-sources": "1.4.3"
     },
     "scripts": {
         "build": "webpack",
