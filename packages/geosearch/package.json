@@ -1,5 +1,5 @@
 {
-    "name": "rz-geosearch",
+    "name": "geosearch",
     "version": "3.0.1",
     "description": "Configurable geolocation search library",
     "main": "src/geosearch.js",
@@ -35,13 +35,6 @@
             ".*": "<rootDir>/node_modules/ts-jest/preprocessor.js"
         },
         "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
-        "moduleFileExtensions": [
-            "ts",
-            "tsx",
-            "js",
-            "jsx",
-            "json",
-            "node"
-        ]
+        "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"]
     }
 }
