@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "lib": ["es2017", "dom"],
+        "module": "esnext",
+        "moduleResolution": "node",
+        "outDir": "dist",
+        "target": "es2016"
+    }
+}

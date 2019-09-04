@@ -1,12 +1,19 @@
 {
-    "name": "ramp-plugin-eh-table",
-    "version": "1.0.0",
-    "description": "",
-    "main": "dist/index.js",
-    "scripts": {
-        "build": "",
-        "serve": ""
-    },
-    "author": "",
-    "license": "ISC"
+  "name": "ramp-plugin-eh-table",
+  "version": "1.0.0",
+  "description": "",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "",
+    "serve": ""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ag-grid-community": "19.0.0",
+    "rxjs": "6.4.0"
+  },
+  "devDependencies": {
+    "@types/jquery": "3.3.29"
+  }
 }

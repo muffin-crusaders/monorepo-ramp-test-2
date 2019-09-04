@@ -373,6 +373,10 @@
         {
             "packageName": "ramp",
             "projectFolder": "packages/ramp"
+        },
+        {
+            "packageName": "ramp-plugin-eh-table",
+            "projectFolder": "packages/ramp-plugin-eh-table"
         }
     ]
 }
