@@ -1,0 +1,12 @@
+{
+    "name": "ramp-plugin-eh-table",
+    "version": "1.0.0",
+    "description": "",
+    "main": "dist/index.js",
+    "scripts": {
+        "build": "",
+        "serve": ""
+    },
+    "author": "",
+    "license": "ISC"
+}
