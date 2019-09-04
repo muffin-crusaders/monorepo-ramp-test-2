@@ -121,10 +121,11 @@ module.exports = function(env) {
                 filename: 'rv-styles.css'
             }),
 
-            new WebpackShellPlugin({
+            // NOTE: disable manual copying of the plugins sample pages; the should be kept in the core package
+            /* new WebpackShellPlugin({
                 onBuildStart: ['bash scripts/pluginSamples.sh'],
                 onBuildEnd: ['rm -rf build/help']
-            }),
+            }), */
 
             new CopyWebpackPlugin([
                 {
