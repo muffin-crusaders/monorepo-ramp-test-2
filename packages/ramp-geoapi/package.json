@@ -1,5 +1,5 @@
 {
-    "name": "geoapi",
+    "name": "ramp-geoapi",
     "version": "3.1.0",
     "description": "",
     "main": "src/index.js",

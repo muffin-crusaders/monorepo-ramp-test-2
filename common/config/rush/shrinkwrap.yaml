@@ -1,9 +1,9 @@
 dependencies:
   '@fgpv/rv-plugins': 3.1.0
   '@flowjs/ng-flow': 2.7.8
-  '@rush-temp/geoapi': 'file:projects/geoapi.tgz'
   '@rush-temp/geosearch': 'file:projects/geosearch.tgz'
-  '@rush-temp/ramp': 'file:projects/ramp.tgz'
+  '@rush-temp/ramp-core': 'file:projects/ramp-core.tgz'
+  '@rush-temp/ramp-geoapi': 'file:projects/ramp-geoapi.tgz'
   '@rush-temp/ramp-plugin-cake-export': 'file:projects/ramp-plugin-cake-export.tgz'
   '@rush-temp/ramp-plugin-eh-table': 'file:projects/ramp-plugin-eh-table.tgz'
   '@types/angular': 1.6.53
@@ -13222,36 +13222,6 @@ packages:
       webpack: ^4.0.0
     resolution:
       integrity: sha512-5kNvPv+TUP3JqKWQUXj0vTgXHIRQpYw5YyBUVXQ0pumTAK+a4OZ+eXDHnh44nyr9B1XJQZq9WtSSm5j6NQhjWQ==
-  'file:projects/geoapi.tgz':
-    dependencies:
-      babel-cli: 6.26.0
-      babel-preset-env: 1.6.1
-      babel-preset-latest: 6.24.1
-      babel-preset-stage-2: 6.24.1
-      canvg-origin: 1.0.0
-      csv2geojson: 5.0.2
-      dgeni: 0.4.12
-      dgeni-packages: 0.19.1
-      docdash: github.com/alyec/docdash/0ac9d0dd482a9b65aa0885d5279fafc566a91f9b
-      jasmine: 2.99.0
-      js-sql-parser: 1.0.7
-      jsdoc: 3.6.3
-      lodash: 4.17.15
-      proj4: 2.5.0
-      rcolor: 1.0.1
-      rgbcolor: 1.0.1
-      shpjs: github.com/fgpv-vpgf/shapefile-js/dd6b31899dee1d70f106b3725430f2eb5f0b350c
-      svg.js: 2.6.1
-      terraformer: 1.0.9
-      terraformer-arcgis-parser: 1.0.5
-      terraformer-proj4js: github.com/RAMP-PCAR/terraformer-proj4js/246cf37a3398494f34d40a1eb603d4de0f1e6e2f
-      text-encoding: 0.6.4
-    dev: false
-    name: '@rush-temp/geoapi'
-    resolution:
-      integrity: sha512-Ko1yVNZhRZqN/XlCXT/rzgSP7UeeqgFdHyUlKIy6LUcSJcckUBMdVR6S8cJ9lyPNgByZzPegzMkhdyI2Jao/Bw==
-      tarball: 'file:projects/geoapi.tgz'
-    version: 0.0.0
   'file:projects/geosearch.tgz':
     dependencies:
       '@types/jasmine': 2.8.8
@@ -13276,39 +13246,7 @@ packages:
       integrity: sha512-6R3+dWRPzgxR4wtuouYRIttYCp+heUhwmR4luRE7W5yhE9/71yhFl+wnBJGHksfX26C+bU/TNzboXQC0hpHzvw==
       tarball: 'file:projects/geosearch.tgz'
     version: 0.0.0
-  'file:projects/ramp-plugin-cake-export.tgz':
-    dependencies:
-      ts-loader: /ts-loader/5.3.2/typescript@3.6.2
-      typescript: 3.6.2
-      webpack: /webpack/4.28.3/webpack@4.28.3
-      webpack-cli: /webpack-cli/3.1.2/webpack@4.28.3
-    dev: false
-    name: '@rush-temp/ramp-plugin-cake-export'
-    resolution:
-      integrity: sha512-I2h9C8B6v5cdrBQfQ44A2IFZFJqg8wkmcl4n/3I9OZx4MH8h3tAQif08adMETtc+kyfEOJfDtOx424l2j6BNZA==
-      tarball: 'file:projects/ramp-plugin-cake-export.tgz'
-    version: 0.0.0
-  'file:projects/ramp-plugin-eh-table.tgz':
-    dependencies:
-      '@types/jquery': 3.3.29
-      ag-grid-community: 19.0.0
-      css-loader: /css-loader/2.1.0/webpack@4.28.3
-      mini-css-extract-plugin: /mini-css-extract-plugin/0.5.0/webpack@4.28.3
-      optimize-css-assets-webpack-plugin: /optimize-css-assets-webpack-plugin/5.0.3/webpack@4.28.3
-      rxjs: 6.4.0
-      sass-loader: /sass-loader/7.1.0/webpack@4.28.3
-      ts-loader: /ts-loader/5.3.2/typescript@3.6.2
-      typescript: 3.6.2
-      url-loader: /url-loader/2.1.0/webpack@4.28.3
-      webpack: /webpack/4.28.3/webpack@4.28.3
-      webpack-cli: /webpack-cli/3.1.2/webpack@4.28.3
-    dev: false
-    name: '@rush-temp/ramp-plugin-eh-table'
-    resolution:
-      integrity: sha512-zr+vzJlwFie/7ulqa8ok3nELwETSCxZBZzAEnHMNeDSXxn5/VCy63RPHX+FaWfR+jdtuOOVHZ9T0L6DgTQl+CQ==
-      tarball: 'file:projects/ramp-plugin-eh-table.tgz'
-    version: 0.0.0
-  'file:projects/ramp.tgz':
+  'file:projects/ramp-core.tgz':
     dependencies:
       '@fgpv/rv-plugins': 3.1.0
       '@flowjs/ng-flow': 2.7.8
@@ -13392,10 +13330,72 @@ packages:
       z-schema: 3.24.2
       zip-webpack-plugin: /zip-webpack-plugin/3.0.0/webpack@4.28.3
     dev: false
-    name: '@rush-temp/ramp'
+    name: '@rush-temp/ramp-core'
     resolution:
-      integrity: sha512-Z+phO3tPZL5/dsCg9QbRpax5hkFFN+z2Nhea5Oxe53tBpJRL6O9BcFcg84b30xxfi+VHAi64M5mbchODC/uc9w==
-      tarball: 'file:projects/ramp.tgz'
+      integrity: sha512-/yntcYN7kBwAF/8am9AeZIJe9UAM0VVclInbXWKcfZbtqnKjAaSJJBOqrEAXzEVPkXnnRF4VZuQTbuFWYt2j6g==
+      tarball: 'file:projects/ramp-core.tgz'
+    version: 0.0.0
+  'file:projects/ramp-geoapi.tgz':
+    dependencies:
+      babel-cli: 6.26.0
+      babel-preset-env: 1.6.1
+      babel-preset-latest: 6.24.1
+      babel-preset-stage-2: 6.24.1
+      canvg-origin: 1.0.0
+      csv2geojson: 5.0.2
+      dgeni: 0.4.12
+      dgeni-packages: 0.19.1
+      docdash: github.com/alyec/docdash/0ac9d0dd482a9b65aa0885d5279fafc566a91f9b
+      jasmine: 2.99.0
+      js-sql-parser: 1.0.7
+      jsdoc: 3.6.3
+      lodash: 4.17.15
+      proj4: 2.5.0
+      rcolor: 1.0.1
+      rgbcolor: 1.0.1
+      shpjs: github.com/fgpv-vpgf/shapefile-js/dd6b31899dee1d70f106b3725430f2eb5f0b350c
+      svg.js: 2.6.1
+      terraformer: 1.0.9
+      terraformer-arcgis-parser: 1.0.5
+      terraformer-proj4js: github.com/RAMP-PCAR/terraformer-proj4js/246cf37a3398494f34d40a1eb603d4de0f1e6e2f
+      text-encoding: 0.6.4
+    dev: false
+    name: '@rush-temp/ramp-geoapi'
+    resolution:
+      integrity: sha512-8fiYiPlqXAskzs1YExXjphE1mpdLP86EYvJJQ1I/GlPXbODgBAyldEbqhjO0i6NOykt7jm7m0p5XOieXhKWpfw==
+      tarball: 'file:projects/ramp-geoapi.tgz'
+    version: 0.0.0
+  'file:projects/ramp-plugin-cake-export.tgz':
+    dependencies:
+      ts-loader: /ts-loader/5.3.2/typescript@3.6.2
+      typescript: 3.6.2
+      webpack: /webpack/4.28.3/webpack@4.28.3
+      webpack-cli: /webpack-cli/3.1.2/webpack@4.28.3
+    dev: false
+    name: '@rush-temp/ramp-plugin-cake-export'
+    resolution:
+      integrity: sha512-I2h9C8B6v5cdrBQfQ44A2IFZFJqg8wkmcl4n/3I9OZx4MH8h3tAQif08adMETtc+kyfEOJfDtOx424l2j6BNZA==
+      tarball: 'file:projects/ramp-plugin-cake-export.tgz'
+    version: 0.0.0
+  'file:projects/ramp-plugin-eh-table.tgz':
+    dependencies:
+      '@types/jquery': 3.3.29
+      ag-grid-community: 19.0.0
+      css-loader: /css-loader/2.1.0/webpack@4.28.3
+      mini-css-extract-plugin: /mini-css-extract-plugin/0.5.0/webpack@4.28.3
+      optimize-css-assets-webpack-plugin: /optimize-css-assets-webpack-plugin/5.0.3/webpack@4.28.3
+      rxjs: 6.4.0
+      sass-loader: /sass-loader/7.1.0/webpack@4.28.3
+      ts-loader: /ts-loader/5.3.2/typescript@3.6.2
+      typescript: 3.6.2
+      url-loader: /url-loader/2.1.0/webpack@4.28.3
+      webpack: /webpack/4.28.3/webpack@4.28.3
+      webpack-cli: /webpack-cli/3.1.2/webpack@4.28.3
+    dev: false
+    name: '@rush-temp/ramp-plugin-eh-table'
+    resolution:
+      integrity: sha512-zr+vzJlwFie/7ulqa8ok3nELwETSCxZBZzAEnHMNeDSXxn5/VCy63RPHX+FaWfR+jdtuOOVHZ9T0L6DgTQl+CQ==
+      tarball: 'file:projects/ramp-plugin-eh-table.tgz'
     version: 0.0.0
   github.com/RAMP-PCAR/terraformer-proj4js/246cf37a3398494f34d40a1eb603d4de0f1e6e2f:
     dependencies:
@@ -13441,9 +13441,9 @@ shrinkwrapVersion: 3
 specifiers:
   '@fgpv/rv-plugins': 3.1.0
   '@flowjs/ng-flow': 2.7.8
-  '@rush-temp/geoapi': 'file:./projects/geoapi.tgz'
   '@rush-temp/geosearch': 'file:./projects/geosearch.tgz'
-  '@rush-temp/ramp': 'file:./projects/ramp.tgz'
+  '@rush-temp/ramp-core': 'file:./projects/ramp-core.tgz'
+  '@rush-temp/ramp-geoapi': 'file:./projects/ramp-geoapi.tgz'
   '@rush-temp/ramp-plugin-cake-export': 'file:./projects/ramp-plugin-cake-export.tgz'
   '@rush-temp/ramp-plugin-eh-table': 'file:./projects/ramp-plugin-eh-table.tgz'
   '@types/angular': 1.6.53
