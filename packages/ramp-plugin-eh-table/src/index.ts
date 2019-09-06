@@ -498,5 +498,3 @@ TableBuilder.prototype.translations = {
         }
     }
 };
-
-(<any>window).enhancedTable = TableBuilder;

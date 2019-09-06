@@ -12,6 +12,12 @@ module.exports = (env, argv) => ({
         path: path.resolve(__dirname, 'dist'),
         filename: 'index.js',
         libraryTarget: 'commonjs2'
+
+        // NOTE: [monoRAMP] since this plugin is bundled directly into the RAMP core, it needs to be packaged as cjs module
+        // in the future, when it's unbundled, it should be packaged to be exposed on the `window`
+        // library: 'EhTable',
+        // libraryExport: 'default', // assign the default export of your entry point to the library
+        // libraryTarget: 'window' // assign the return value of your entry point to the window
     },
     module: {
         rules: [

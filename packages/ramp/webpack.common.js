@@ -29,7 +29,9 @@ module.exports = function(env) {
     const config = {
         entry: {
             'legacy-api': path.resolve(__dirname, 'src/legacy-api.ts'),
-            'rv-main': path.resolve(__dirname, 'src/app/app-loader.js')
+            'rv-main': path.resolve(__dirname, 'src/app/app-loader.js'),
+            // NOTE: [monoRAMP] add a separate entry for each plugin so they are properly copied over and hot-wired
+            'ramp-plugin-cake-export': path.resolve(__dirname, 'node_modules/ramp-plugin-cake-export')
         },
 
         output: {
@@ -121,7 +123,7 @@ module.exports = function(env) {
                 filename: 'rv-styles.css'
             }),
 
-            // NOTE: disable manual copying of the plugins sample pages; the should be kept in the core package
+            // NOTE: [monoRAMP] disable manual copying of the plugins sample pages; the should be kept in the core package
             /* new WebpackShellPlugin({
                 onBuildStart: ['bash scripts/pluginSamples.sh'],
                 onBuildEnd: ['rm -rf build/help']
@@ -144,7 +146,8 @@ module.exports = function(env) {
             ]),
 
             new webpack.ProvidePlugin({
-                $: 'jquery',
+                // NOTE: [monoRAMP] no clue what this is for, but it was breaking build with ts@3+, saying that jquery cannot be resolved in table plugin
+                // $: 'jquery',
                 jQuery: 'jquery',
                 'window.jQuery': 'jquery'
             }),
@@ -166,8 +169,8 @@ module.exports = function(env) {
         ],
 
         resolve: {
-            // this line was breaking module resolution when running under rush
-            // TODO: figure out what this line was doing;
+            // this line was breaking module resolution when running under `rush`
+            // NOTE: [monoRAMP] figure out what this line was doing;
             // modules: [path.resolve(__dirname, 'node_modules'), path.resolve(geoPath, 'node_modules'), path.resolve(__dirname, 'features/node_modules')],
             alias: {
                 XSLT: path.resolve(__dirname, 'src/content/metadata/'),

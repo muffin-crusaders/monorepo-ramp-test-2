@@ -1,21 +1,19 @@
 import EPSG from '../features/epsg/epsg.feature';
 import geoSearch from '../features/geosearch/geosearch.feature';
-/* import { TableBuilder } from '@fgpv/rv-plugins';
-import '@fgpv/rv-plugins/lib/enhancedTable/main.css'; */
 
-import TableBuilder from 'ramp-plugin-eh-table';
+import EhTable from 'ramp-plugin-eh-table';
 import 'ramp-plugin-eh-table/dist/main.css';
 
 import { FgpvConfigSchema } from 'api/schema';
 
 const AUTOLOAD_PLUGINS: any = {
-    table: TableBuilder
+    table: EhTable
 };
 
 let loadFeatures: any = {
     epsg: EPSG,
     geoSearch,
-    table: TableBuilder
+    table: EhTable
 };
 
 // Each map instance will make a Loader instance

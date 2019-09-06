@@ -9,11 +9,11 @@ interface ExportPluginOptions {
     mapSize: { width: number; height: number };
 }
 
-class CustomExport {
+export default class CakeExport {
     feature: string = 'export';
 
     // A store of the instances of areasOfInterest, 1 per map
-    static instances: { [id: string]: CustomExport } = {};
+    static instances: { [id: string]: CakeExport } = {};
 
     preInit() {
         console.log('Sample export plugin pre-init check.');
@@ -22,7 +22,7 @@ class CustomExport {
     init(api: any) {
         this.api = api;
 
-        CustomExport.instances[this.api.id] = this;
+        CakeExport.instances[this.api.id] = this;
     }
 
     /**
@@ -151,14 +151,14 @@ class CustomExport {
     }
 }
 
-interface CustomExport {
+export default interface CakeExport {
     translations: any;
     config: any;
     api: any;
     _RV: any;
 }
 
-CustomExport.prototype.translations = {
+CakeExport.prototype.translations = {
     'en-CA': {
         title: 'Cake Export'
     },
@@ -166,5 +166,3 @@ CustomExport.prototype.translations = {
         title: `Export la Cake`
     }
 };
-
-(<any>window).customExport = CustomExport;

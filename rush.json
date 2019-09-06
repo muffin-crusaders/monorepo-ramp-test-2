@@ -375,6 +375,10 @@
             "projectFolder": "packages/ramp"
         },
         {
+            "packageName": "ramp-plugin-cake-export",
+            "projectFolder": "packages/ramp-plugin-cake-export"
+        },
+        {
             "packageName": "ramp-plugin-eh-table",
             "projectFolder": "packages/ramp-plugin-eh-table"
         }
