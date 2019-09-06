@@ -359,8 +359,8 @@
         // }
 
         {
-            "packageName": "geoapi",
-            "projectFolder": "packages/geoapi"
+            "packageName": "ramp-geoapi",
+            "projectFolder": "packages/ramp-geoapi"
         },
         {
             "packageName": "geosearch",
@@ -371,8 +371,8 @@
             "projectFolder": "packages/plugins"
         }, */
         {
-            "packageName": "ramp",
-            "projectFolder": "packages/ramp"
+            "packageName": "ramp-core",
+            "projectFolder": "packages/ramp-core"
         },
         {
             "packageName": "ramp-plugin-cake-export",
