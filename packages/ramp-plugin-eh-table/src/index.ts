@@ -12,6 +12,8 @@ const NUMBER_TYPES = ['esriFieldTypeOID', 'esriFieldTypeDouble', 'esriFieldTypeI
 const DATE_TYPE = 'esriFieldTypeDate';
 const TEXT_TYPE = 'esriFieldTypeString';
 
+import './main.scss';
+
 export default class TableBuilder {
     feature = 'table';
     attributeHeaders: any;
@@ -37,7 +39,11 @@ export default class TableBuilder {
         // toggle the enhancedTable if toggleDataTable is called from Legend API
         this.mapApi.ui.configLegend.dataTableToggled.subscribe(({ apiLayer, legendBlock }) => {
             // Open the table if its closed, never been created or this is a different layer (by comparing API layers, instead of legendBlocks, since reload changes legendBlock)
-            if (this.panelManager.panel.isClosed || !this.panelManager.panelStateManager || this.panelManager.panelStateManager.baseLayer !== apiLayer) {
+            if (
+                this.panelManager.panel.isClosed ||
+                !this.panelManager.panelStateManager ||
+                this.panelManager.panelStateManager.baseLayer !== apiLayer
+            ) {
                 // creates a 'loader' panel to be opened if data hasn't loaded after 200ms
                 this.deleteLoaderPanel();
                 this.loadingPanel = new PanelLoader(this.mapApi, legendBlock);
@@ -58,7 +64,7 @@ export default class TableBuilder {
             // make sure the item clicked is a node, and not group or other
             let layer;
             if (legendBlock.parentLayerType === 'esriDynamic') {
-                layer = this.mapApi.layers.allLayers.find(function (l) {
+                layer = this.mapApi.layers.allLayers.find(function(l) {
                     return l.id === legendBlock.layerRecordId && l.layerIndex === parseInt(legendBlock.itemIndex);
                 });
             } else {
@@ -136,12 +142,12 @@ export default class TableBuilder {
         const layerProxy = attrBundle.layer._layerProxy;
 
         layerProxy.formattedAttributes.then(a => {
-
             // get column order according to the config if defined
             // else get default columns
-            const columns = Object.keys(this.configManager.columnConfigs).length > 0 ?
-                ['rvInteractive', 'rvSymbol', ...Object.keys(this.configManager.columnConfigs)] :
-                Object.keys(a.rows[0]);
+            const columns =
+                Object.keys(this.configManager.columnConfigs).length > 0
+                    ? ['rvInteractive', 'rvSymbol', ...Object.keys(this.configManager.columnConfigs)]
+                    : Object.keys(a.rows[0]);
 
             columns.forEach(columnName => {
                 if (
@@ -165,25 +171,34 @@ export default class TableBuilder {
                         minWidth: column.width,
                         maxWidth: column.width,
                         headerName: this.attributeHeaders[columnName] ? this.attributeHeaders[columnName]['name'] : '',
-                        headerTooltip: this.attributeHeaders[columnName] ? this.attributeHeaders[columnName]['name'] : '',
+                        headerTooltip: this.attributeHeaders[columnName]
+                            ? this.attributeHeaders[columnName]['name']
+                            : '',
                         field: columnName,
                         filterParams: <FilterParameters>{},
                         filter: 'agTextColumnFilter',
                         floatingFilterComponentParams: { suppressFilterButton: true, mapApi: this.mapApi },
                         floatingFilterComponent: undefined,
-                        cellRenderer: function (cell) {
-                            const translated = $(`<span>{{ 'plugins.enhancedTable.table.complexValue' | translate }}</span>`);
+                        cellRenderer: function(cell) {
+                            const translated = $(
+                                `<span>{{ 'plugins.enhancedTable.table.complexValue' | translate }}</span>`
+                            );
                             self.mapApi.$compile(translated);
-                            return cell.value || !isNaN(cell.value) ? (typeof cell.value === 'object' ? translated[0] : cell.value) : '';
+                            return cell.value || !isNaN(cell.value)
+                                ? typeof cell.value === 'object'
+                                    ? translated[0]
+                                    : cell.value
+                                : '';
                         },
                         suppressSorting: false,
                         suppressFilter: column.searchDisabled,
                         sort: column.sort,
                         suppressMovable: true,
-                        hide: column.column !== undefined && column.column.visible !== undefined ? !column.column.visible : false
+                        hide:
+                            column.column !== undefined && column.column.visible !== undefined
+                                ? !column.column.visible
+                                : false
                     };
-
-
 
                     // set up floating filters and column header
                     const fieldInfo = a.fields.find(field => field.name === columnName);
@@ -196,9 +211,21 @@ export default class TableBuilder {
                             // floating filters of type number, date, text
                             // text can be of type text or selector
                             if (NUMBER_TYPES.indexOf(fieldInfo.type) > -1) {
-                                setUpNumberFilter(colDef, isStatic, column.value, this.tableOptions, this.panelManager.panelStateManager);
+                                setUpNumberFilter(
+                                    colDef,
+                                    isStatic,
+                                    column.value,
+                                    this.tableOptions,
+                                    this.panelManager.panelStateManager
+                                );
                             } else if (fieldInfo.type === DATE_TYPE) {
-                                setUpDateFilter(colDef, isStatic, this.mapApi, column.value, this.panelManager.panelStateManager);
+                                setUpDateFilter(
+                                    colDef,
+                                    isStatic,
+                                    this.mapApi,
+                                    column.value,
+                                    this.panelManager.panelStateManager
+                                );
                             } else if (fieldInfo.type === TEXT_TYPE && attrBundle.layer.table !== undefined) {
                                 if (isSelector) {
                                     setUpSelectorFilter(
@@ -268,10 +295,10 @@ function setUpSymbolsAndInteractive(columnName: string, colDef: any, cols: any, 
         if (columnName === 'rvSymbol') {
             colDef.maxWidth = 82;
             // set svg symbol for the symbol column
-            colDef.cellRenderer = function (cell) {
+            colDef.cellRenderer = function(cell) {
                 return cell.value;
             };
-            colDef.cellStyle = function (cell) {
+            colDef.cellStyle = function(cell) {
                 return {
                     paddingTop: '7px'
                 };
@@ -281,10 +308,10 @@ function setUpSymbolsAndInteractive(columnName: string, colDef: any, cols: any, 
             // sets details and zoom buttons for the row
             let zoomDef = (<any>Object).assign({}, colDef);
             zoomDef.field = 'zoom';
-            zoomDef.cellRenderer = function (params) {
+            zoomDef.cellRenderer = function(params) {
                 var eSpan = $(ZOOM_TEMPLATE(params.data[layerProxy.oidField]));
                 mapApi.$compile(eSpan);
-                params.eGridCell.addEventListener('keydown', function (e) {
+                params.eGridCell.addEventListener('keydown', function(e) {
                     if (e.key === 'Enter') {
                         eSpan.click();
                     }
@@ -293,10 +320,10 @@ function setUpSymbolsAndInteractive(columnName: string, colDef: any, cols: any, 
                 return eSpan[0];
             };
             cols.splice(0, 0, zoomDef);
-            colDef.cellRenderer = function (params) {
+            colDef.cellRenderer = function(params) {
                 var eSpan = $(DETAILS_TEMPLATE(params.data[layerProxy.oidField]));
                 mapApi.$compile(eSpan);
-                params.eGridCell.addEventListener('keydown', function (e) {
+                params.eGridCell.addEventListener('keydown', function(e) {
                     if (e.key === 'Enter') {
                         eSpan.click();
                     }
@@ -348,7 +375,7 @@ interface ColumnDefinition {
     maxWidth?: number;
     width?: number;
     field: string;
-    headerComponent?: { new(): CustomHeader };
+    headerComponent?: { new (): CustomHeader };
     headerComponentParams?: HeaderComponentParams;
     filter: string;
     filterParams?: any;

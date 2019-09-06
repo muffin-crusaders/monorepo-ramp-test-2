@@ -33,7 +33,8 @@
         "svg.textflow.js": "github:fgpv-vpgf/svg.textflow.js",
         "ag-grid-community": "19.0.0",
         "jquery": "3.4.1",
-        "babel-runtime": "6.26.0"
+        "babel-runtime": "6.26.0",
+        "ramp-plugin-eh-table": "1.0.0"
     },
     "devDependencies": {
         "@types/angular": "1.6.53",

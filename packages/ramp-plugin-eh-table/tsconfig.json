@@ -1,9 +1,12 @@
 {
     "compilerOptions": {
-        "lib": ["es2017", "dom"],
-        "module": "esnext",
+        "declaration": true,
+        "lib": ["es5", "es2015", "dom", "scripthost"],
+        "module": "commonjs",
         "moduleResolution": "node",
-        "outDir": "dist",
-        "target": "es2016"
+        "noImplicitAny": false,
+        "outDir": "./dist",
+        "target": "es5",
+        "types": ["jquery"]
     }
 }
