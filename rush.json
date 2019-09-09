@@ -375,6 +375,10 @@
             "projectFolder": "packages/ramp-core"
         },
         {
+            "packageName": "ramp-plugin-areas-of-interest",
+            "projectFolder": "packages/ramp-plugin-areas-of-interest"
+        },
+        {
             "packageName": "ramp-plugin-cake-export",
             "projectFolder": "packages/ramp-plugin-cake-export"
         },

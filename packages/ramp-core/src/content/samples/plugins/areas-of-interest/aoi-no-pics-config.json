@@ -72,57 +72,57 @@
         "legend": {
             "type": "structured",
             "root": {
-              "name": "root",
-              "children": [
-                {
-                  "layerId": "powerplant-nuclear"
-                },
-                {
-                  "layerId": "powerplant-wind"
-                },
-                {
-                  "layerId": "powerplant-solar"
-                }
-              ]
+                "name": "root",
+                "children": [
+                    {
+                        "layerId": "powerplant-nuclear"
+                    },
+                    {
+                        "layerId": "powerplant-wind"
+                    },
+                    {
+                        "layerId": "powerplant-solar"
+                    }
+                ]
             }
         },
         "layers": [
             {
-              "id": "powerplant-nuclear",
-              "name": "Power Plants, nuclear",
-              "layerType": "esriDynamic",
-              "metadataUrl": "http://donnees-data.intranet.ec.gc.ca:80/geonetwork/srv/eng/xml.metadata.get?uuid=917b8854-64a5-41d6-ad7f-d0a3c0c3cb29",
-              "layerEntries": [
-                {
-                  "index": 22,
-                  "table": {
-                    "title": "A custom title"
-                  }
-                }
-              ],
-              "url": "http://geoappext.nrcan.gc.ca/arcgis/rest/services/NACEI/energy_infrastructure_of_north_america_en/MapServer"
+                "id": "powerplant-nuclear",
+                "name": "Power Plants, nuclear",
+                "layerType": "esriDynamic",
+                "metadataUrl": "http://donnees-data.intranet.ec.gc.ca:80/geonetwork/srv/eng/xml.metadata.get?uuid=917b8854-64a5-41d6-ad7f-d0a3c0c3cb29",
+                "layerEntries": [
+                    {
+                        "index": 22,
+                        "table": {
+                            "title": "A custom title"
+                        }
+                    }
+                ],
+                "url": "http://geoappext.nrcan.gc.ca/arcgis/rest/services/NACEI/energy_infrastructure_of_north_america_en/MapServer"
             },
             {
-              "id": "powerplant-solar",
-              "name": "Power Plants, solar",
-              "layerType": "esriDynamic",
-              "layerEntries": [
-                {
-                  "index": 34
-                }
-              ],
-              "url": "http://geoappext.nrcan.gc.ca/arcgis/rest/services/NACEI/energy_infrastructure_of_north_america_en/MapServer"
+                "id": "powerplant-solar",
+                "name": "Power Plants, solar",
+                "layerType": "esriDynamic",
+                "layerEntries": [
+                    {
+                        "index": 34
+                    }
+                ],
+                "url": "http://geoappext.nrcan.gc.ca/arcgis/rest/services/NACEI/energy_infrastructure_of_north_america_en/MapServer"
             },
             {
-              "id": "powerplant-wind",
-              "name": "Power Plants, wind",
-              "layerType": "esriDynamic",
-              "layerEntries": [
-                {
-                  "index": 27
-                }
-              ],
-              "url": "http://geoappext.nrcan.gc.ca/arcgis/rest/services/NACEI/energy_infrastructure_of_north_america_en/MapServer"
+                "id": "powerplant-wind",
+                "name": "Power Plants, wind",
+                "layerType": "esriDynamic",
+                "layerEntries": [
+                    {
+                        "index": 27
+                    }
+                ],
+                "url": "http://geoappext.nrcan.gc.ca/arcgis/rest/services/NACEI/energy_infrastructure_of_north_america_en/MapServer"
             }
         ],
         "extentSets": [
@@ -518,7 +518,7 @@
         ]
     },
     "plugins": {
-        "areasOfInterest": {
+        "AreasOfInterest": {
             "areas": [
                 {
                     "title-en-CA": "Reservoir Manicougan, Quebec, Canada",
@@ -527,8 +527,7 @@
                     "xmax": 1840000,
                     "ymax": 682193,
                     "ymin": 583440,
-                    "wkid": 3978,
-                    "thumbnailUrl": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/BaseMaps/CBMT3978/MapServer/tile/8/285/268"
+                    "wkid": 3978
                 },
                 {
                     "title-en-CA": "Gulf of St Lawrence",
@@ -537,8 +536,7 @@
                     "xmax": 2240000,
                     "ymax": 682193,
                     "ymin": 583440,
-                    "wkid": 3978,
-                    "thumbnailUrl": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/BaseMaps/CBMT3978/MapServer/tile/8/286/270"
+                    "wkid": 3978
                 },
                 {
                     "title-en-CA": "Lake Grandmesnil and surrounding lakes",
@@ -547,8 +545,7 @@
                     "xmax": 1840000,
                     "ymax": 682193,
                     "ymin": 583440,
-                    "wkid": 3978,
-                    "thumbnailUrl": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/BaseMaps/CBMT3978/MapServer/tile/8/285/269"
+                    "wkid": 3978
                 },
                 {
                     "title-en-CA": "Lake Piraube and surrounding lakes",
@@ -557,10 +554,10 @@
                     "xmax": 1740000,
                     "ymax": 632193,
                     "ymin": 333440,
-                    "wkid": 3978,
-                    "thumbnailUrl": "https://geoappext.nrcan.gc.ca/arcgis/rest/services/BaseMaps/CBMT3978/MapServer/tile/8/286/267"
+                    "wkid": 3978
                 }
-            ]
+            ],
+            "noPicture": true
         }
     }
 }

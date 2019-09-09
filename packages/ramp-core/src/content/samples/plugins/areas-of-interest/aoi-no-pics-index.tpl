@@ -4,7 +4,7 @@
 <head>
         <meta charset="utf-8" />
         <meta content="width=device-width,initial-scale=1" name="viewport" />
-        <title>Plugin: Cake Export</title>
+        <title>Areas of interst: No Pics</title>
 
         <style>
             body {
@@ -17,7 +17,7 @@
             }
         </style>
 
-        <script src="/ramp-plugin-cake-export.js"></script>
+        <script src="/ramp-plugin-areas-of-interest.js"></script>
 
         <% for (var index in htmlWebpackPlugin.files.css) { %>
         <% if (webpackConfig.output.crossOriginLoading) { %>
@@ -29,12 +29,26 @@
     </head>
 
 <body>
+
+    <h1>
+            Federal Geospatial Platform Visualiser -
+            <span style="color:blue">Areas of Interest Demo</span>
+        </h1>
+        <p>
+            <a href="./aoi-pics-index.html">Picturess Demo</a>
+        </p>
+        <script
+            src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"
+        ></script>
+
     <div class="myMap"
             id="sample-map"
             is="rv-map"
-            rv-config="ramp-config.json"
+            rv-config="aoi-no-pics-config.json"
             rv-langs='["en-CA", "fr-CA"]'
-            rv-plugins="CakeExport" >
+            rv-plugins="AreasOfInterest" >
          <noscript>
             <p>This interactive map requires JavaScript. To view this content please enable JavaScript in your browser or download a browser that supports it.<p>
 
