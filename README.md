@@ -1,13 +1,23 @@
 # RAMP Monorepo Test 2
 
-The following RAMP repost are merged as packages in this monorepo:
+The following RAMP repos are merged as packages in this monorepo:
 
 -   https://github.com/fgpv-vpgf/fgpv-vpgf.git ramp packages/ramp
 -   https://github.com/fgpv-vpgf/geoApi.git geoapi packages/geoapi
 -   https://github.com/fgpv-vpgf/plugins.git plugins packages/plugins
 -   https://github.com/RAMP-PCAR/geosearch.git geosearch packages/geosearch
 
-Right now, only `geoapi` is hotlinked into the ramp package (`geosearch` and `plugins` are just sitting there doing nothing; `ramp` package will fetch them from NPM as usual). Other will come later as this is just another POC.
+All plugins are pulled into separate packages (prefixed with `ramp-plugin`) with their own build processes. `geoapi`, `geosearch` and all the plugin packages are locally linked into the `ramp-core` though rush (see `rush.json` file). The current folder structure is as follows:
+
+-   packages\
+    -   ramp-core\
+    -   ramp-geoapi\
+    -   ramp-geosearch\
+    -   ramp-plugin-areas-of-interest\
+    -   ramp-plugin-back-to-cart\
+    -   ramp-plugin-cake-export\
+    -   ramp-plugin-coordinate-info\
+    -   ramp-plugin-eh-table\
 
 ## Getting Started
 
@@ -23,19 +33,44 @@ Clone the repo and use Rush to install dependencies:
 $ rush update
 ```
 
+You might want to run `rush update -p --full` to cleanly re-install all the dependencies:
+
+-   `-p` for purge, to remove all the installed packages
+-   `--full` just because it looks important
+
 Serve the project:
 
 ```
-$ rush serve
+$ rush serve -p 10 -v
 ```
 
-Open the page (you can click on emoji):
+-   `-p 10` specifies the maximum number of concurrent processes to run (we need 8 right now to serve all the packages at the same time)
+-   `-v` provides verbose output for debugging
+
+Rush can't run a command just for a subset of packages, but this feature is being considered (https://github.com/microsoft/web-build-tools/issues/1168, https://github.com/microsoft/web-build-tools/issues/1202).
+
+So, if you want to work only on several packages (say `ramp-core` and `ramp-eh-table`), you need to run `npm run serve` as separate processes:
+
+```
+// terminal 0
+$ cd packgages/ramp-core
+$ npm run serve
+
+// terminal 2
+$ cd packgages/ramp-plugin-eh-table
+$ npm run serve
+```
+
+Open a samples page:
 
 ```
 http://localhost:6001/samples/index-samples.html
+http://localhost:6001/samples/plugins/cake-export/cake-export-index.html
 ```
 
-In your editor, make changes to `packages\geoapi\src\index.js` file and observe the page reloaded on save.
+In your editor, make changes to any of the packages' source files and observe the page hot-reload on save.
+
+See other rush commands here: https://rushjs.io/pages/commands/rush_add/
 
 # Remaining Problems
 
@@ -64,8 +99,14 @@ We need to ferret out these implicit dependencies and make them explicit in the 
 
 # Further Tasks
 
--   use geosearch as a monorepo dependency
--   use plugins as a monorepo dependency
--   clean up and make it stable
--   re-enable `build` and `serve` commands
+-   implement Travis builds
+-   implement Azure cloud built deployment
+-   implement docs publishing
+-   ???
+-   ~~use geosearch as a monorepo dependency~~
+-   ~~use plugins as a monorepo dependency~~
+-   ~~clean up and~~ make it stable
+-   ~~re-enable `build` and `serve` commands~~
+-   [maybe] re-enable test harness for `eh-table`
+-   figure out why we need four different versions of Typescript to build this
 -   eat 🍰
