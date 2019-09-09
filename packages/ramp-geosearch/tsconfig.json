@@ -11,8 +11,7 @@
         "removeComments": false,
         "module": "esnext",
         "moduleResolution": "node",
-        "target": "es5",
-        "jsx": "react"
+        "target": "es5"
     },
-    "exclude": ["node_modules", "tests"]
+    "exclude": ["tests", "dist"]
 }

@@ -1,9 +1,8 @@
 import * as jsontypes from '../data/types.json';
 import * as defs from './definitions';
 
-const typeObj: {[key: string]: Types} = {};
+const typeObj: { [key: string]: Types } = {};
 const types: defs.GenericObjectType = (<any>jsontypes).default;
-
 
 class Types {
     allTypes: defs.GenericObjectType = {};
@@ -36,6 +35,5 @@ class Types {
 }
 
 export default function(language: string): defs.Types {
-    return typeObj[language] = typeObj[language] ? typeObj[language] : new Types(language);
+    return (typeObj[language] = typeObj[language] ? typeObj[language] : new Types(language));
 }
-

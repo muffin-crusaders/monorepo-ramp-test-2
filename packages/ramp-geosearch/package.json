@@ -3,6 +3,7 @@
     "version": "3.0.1",
     "description": "Configurable geolocation search library",
     "main": "dist/index.js",
+    "typings": "dist/index.d.ts",
     "repository": "git@github.com:RAMP-PCAR/geosearch.git",
     "author": "Miles Petrov",
     "license": "MIT",
@@ -23,7 +24,6 @@
         "webpack-cli": "3.1.2",
         "webpack": "4.28.3"
     },
-    "typings": "dist/index.d.ts",
     "scripts": {
         "build": "webpack --mode=production",
         "serve": "webpack --watch --mode=development",

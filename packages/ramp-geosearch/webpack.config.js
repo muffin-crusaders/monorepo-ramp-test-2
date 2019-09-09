@@ -3,9 +3,7 @@ const path = require('path');
 module.exports = (env, argv) => ({
     mode: argv.mode,
     devtool: argv.mode === 'development' ? 'cheap-eval-source-map' : false,
-    entry: {
-        geosearch: './src/index.ts'
-    },
+    entry: './src/index.ts',
 
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -24,7 +22,8 @@ module.exports = (env, argv) => ({
                         loader: 'ts-loader'
                     },
                     'tslint-loader'
-                ]
+                ],
+                exclude: /node_modules/
             }
         ]
     },

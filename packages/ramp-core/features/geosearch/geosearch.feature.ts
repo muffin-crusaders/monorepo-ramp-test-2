@@ -3,24 +3,24 @@
  * @description A feature that provides geo location search
  */
 
-import { GeoSearch} 'ramp-geosearch';
+import { GeoSearch } from 'ramp-geosearch';
 
 const CODE_TO_ABBR = {
-    10: "NL",
-    11: "PE",
-    12: "NS",
-    13: "NB",
-    24: "QC",
-    35: "ON",
-    46: "MB",
-    47: "SK",
-    48: "AB",
-    59: "BC",
-    60: "YU",
-    61: "NT",
-    62: "NU",
-    72: "UF",
-    73: "IW"
+    10: 'NL',
+    11: 'PE',
+    12: 'NS',
+    13: 'NB',
+    24: 'QC',
+    35: 'ON',
+    46: 'MB',
+    47: 'SK',
+    48: 'AB',
+    59: 'BC',
+    60: 'YU',
+    61: 'NT',
+    62: 'NU',
+    72: 'UF',
+    73: 'IW'
 };
 
 /**
@@ -38,7 +38,7 @@ const CODE_TO_ABBR = {
  */
 class GeoSearchUI {
     constructor(config = {}) {
-        (<any>this)._geoSearhObj = new (<any>window).GeoSearch(config);
+        (<any>this)._geoSearhObj = new GeoSearch(config);
         (<any>this)._lang = (<any>config).language || 'en';
         (<any>this)._provinceList = [];
         (<any>this)._typeList = [];
@@ -46,13 +46,25 @@ class GeoSearchUI {
         (<any>this)._settings = (<any>config).settings || {};
     }
 
-    get lang() { return (<any>this)._lang; }
-    get provinceList() { return (<any>this)._provinceList; }
-    get typeList() { return (<any>this)._typeList; }
-    get settings() { return (<any>this)._settings; }
+    get lang() {
+        return (<any>this)._lang;
+    }
+    get provinceList() {
+        return (<any>this)._provinceList;
+    }
+    get typeList() {
+        return (<any>this)._typeList;
+    }
+    get settings() {
+        return (<any>this)._settings;
+    }
 
-    set provinceList(val) { (<any>this)._provinceList = val; }
-    set typeList(val) { (<any>this)._typeList = val; }
+    set provinceList(val) {
+        (<any>this)._provinceList = val;
+    }
+    set typeList(val) {
+        (<any>this)._typeList = val;
+    }
 
     /**
      * Find and return the province object in the province list
@@ -77,45 +89,52 @@ class GeoSearchUI {
             let featureResult: any[] = [];
 
             // need to ensure that any disabled types are not included in our results output (add constants later if required)
-            if (q.featureResults) { // it is a feature query
-                if (q.featureResults.fsa && !(<any>this)._excludedTypes.includes("FSA")) { // FSA query
+            if (q.featureResults) {
+                // it is a feature query
+                if (q.featureResults.fsa && !(<any>this)._excludedTypes.includes('FSA')) {
+                    // FSA query
                     const bboxRange = 0.02;
-                    featureResult = [{
-                        name: q.featureResults.fsa,
-                        bbox: [
-                            q.featureResults.LatLon.lon + bboxRange,
-                            q.featureResults.LatLon.lat - bboxRange,
-                            q.featureResults.LatLon.lon - bboxRange,
-                            q.featureResults.LatLon.lat + bboxRange
-                        ],
-                        type: {
-                            name: q.featureResults.desc
-                        },
-                        position: [q.featureResults.LatLon.lon, q.featureResults.LatLon.lat],
-                        location: {
-                            latitude: q.featureResults.LatLon.lat,
-                            longitude: q.featureResults.LatLon.lon,
-                            province: this.findProvinceObj(q.featureResults.province)
+                    featureResult = [
+                        {
+                            name: q.featureResults.fsa,
+                            bbox: [
+                                q.featureResults.LatLon.lon + bboxRange,
+                                q.featureResults.LatLon.lat - bboxRange,
+                                q.featureResults.LatLon.lon - bboxRange,
+                                q.featureResults.LatLon.lat + bboxRange
+                            ],
+                            type: {
+                                name: q.featureResults.desc
+                            },
+                            position: [q.featureResults.LatLon.lon, q.featureResults.LatLon.lat],
+                            location: {
+                                latitude: q.featureResults.LatLon.lat,
+                                longitude: q.featureResults.LatLon.lon,
+                                province: this.findProvinceObj(q.featureResults.province)
+                            }
                         }
-                    }];
-                } else if (q.featureResults.nts && !(<any>this)._excludedTypes.includes("NTS")) {  // NTS query
-                    featureResult = [{
-                        name: q.featureResults.nts,
-                        bbox: q.featureResults.bbox,
-                        type: {
-                            name: q.featureResults.desc
-                        },
-                        position: [q.featureResults.LatLon.lon, q.featureResults.LatLon.lat],
-                        location: {
-                            city: q.featureResults.location,
-                            latitude: q.featureResults.LatLon.lat,
-                            longitude: q.featureResults.LatLon.lon
+                    ];
+                } else if (q.featureResults.nts && !(<any>this)._excludedTypes.includes('NTS')) {
+                    // NTS query
+                    featureResult = [
+                        {
+                            name: q.featureResults.nts,
+                            bbox: q.featureResults.bbox,
+                            type: {
+                                name: q.featureResults.desc
+                            },
+                            position: [q.featureResults.LatLon.lon, q.featureResults.LatLon.lat],
+                            location: {
+                                city: q.featureResults.location,
+                                latitude: q.featureResults.LatLon.lat,
+                                longitude: q.featureResults.LatLon.lon
+                            }
                         }
-                    }];
+                    ];
                 }
-            } else if (q.latLongResult !== undefined && !(<any>this)._excludedTypes.includes("COORD")) {
-                featureResult = [q.latLongResult]
-            } else if (q.scale !== undefined && !(<any>this)._excludedTypes.includes("SCALE")) {
+            } else if (q.latLongResult !== undefined && !(<any>this)._excludedTypes.includes('COORD')) {
+                featureResult = [q.latLongResult];
+            } else if (q.scale !== undefined && !(<any>this)._excludedTypes.includes('SCALE')) {
                 featureResult = q.scale;
             }
             let queryResult = q.results.map((item: any) => ({
@@ -196,4 +215,4 @@ class GeoSearchUI {
 export default {
     feature: 'geoSearch',
     GeoSearchUI
-}
+};
