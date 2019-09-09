@@ -469,8 +469,8 @@
         ]
     },
     "plugins": {
-        "backToCart": {
-            "catalogueUrl": "backtocart-index.html?keys={RV_LAYER_LIST}"
+        "BackToCart": {
+            "catalogueUrl": "back-to-cart-index.html?keys={RV_LAYER_LIST}"
         }
     }
 }

@@ -40,6 +40,7 @@
         "marked": "0.5.2",
         "ramp-geoapi": "3.1.0",
         "ramp-plugin-areas-of-interest": "1.0.0",
+        "ramp-plugin-back-to-cart": "1.0.0",
         "ramp-plugin-cake-export": "1.0.0",
         "ramp-plugin-eh-table": "1.0.0",
         "rcolor": "1.0.1",

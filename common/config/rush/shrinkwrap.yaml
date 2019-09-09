@@ -5,6 +5,7 @@ dependencies:
   '@rush-temp/ramp-core': 'file:projects/ramp-core.tgz'
   '@rush-temp/ramp-geoapi': 'file:projects/ramp-geoapi.tgz'
   '@rush-temp/ramp-plugin-areas-of-interest': 'file:projects/ramp-plugin-areas-of-interest.tgz'
+  '@rush-temp/ramp-plugin-back-to-cart': 'file:projects/ramp-plugin-back-to-cart.tgz'
   '@rush-temp/ramp-plugin-cake-export': 'file:projects/ramp-plugin-cake-export.tgz'
   '@rush-temp/ramp-plugin-eh-table': 'file:projects/ramp-plugin-eh-table.tgz'
   '@types/angular': 1.6.53
@@ -2232,7 +2233,7 @@ packages:
   /browserslist/2.11.3:
     dependencies:
       caniuse-lite: 1.0.30000989
-      electron-to-chromium: 1.3.252
+      electron-to-chromium: 1.3.253
     deprecated: Browserslist 2 could fail on reading Browserslist >3.0 config used in other tools.
     dev: false
     hasBin: true
@@ -2241,8 +2242,8 @@ packages:
   /browserslist/4.7.0:
     dependencies:
       caniuse-lite: 1.0.30000989
-      electron-to-chromium: 1.3.252
-      node-releases: 1.1.29
+      electron-to-chromium: 1.3.253
+      node-releases: 1.1.30
     dev: false
     hasBin: true
     resolution:
@@ -3063,29 +3064,6 @@ packages:
       node: '>= 4'
     resolution:
       integrity: sha512-Y+SQCF+0NoWQryez2zXn5J5knmr9z/9qSQt7fbL78u83rxmigOy8X5+BFn8CFSuX+nKT8gpYwJX68ekqtQt6ZA==
-  /copy-webpack-plugin/5.0.4/webpack@4.28.3:
-    dependencies:
-      cacache: 11.3.3
-      find-cache-dir: 2.1.0
-      glob-parent: 3.1.0
-      globby: 7.1.1
-      is-glob: 4.0.1
-      loader-utils: 1.2.3
-      minimatch: 3.0.4
-      normalize-path: 3.0.0
-      p-limit: 2.2.1
-      schema-utils: 1.0.0
-      serialize-javascript: 1.9.1
-      webpack: /webpack/4.28.3/webpack@4.28.3
-      webpack-log: 2.0.0
-    dev: false
-    engines:
-      node: '>= 6.9.0'
-    id: registry.npmjs.org/copy-webpack-plugin/5.0.4
-    peerDependencies:
-      webpack: ^4.0.0
-    resolution:
-      integrity: sha512-YBuYGpSzoCHSSDGyHy6VJ7SHojKp6WHT4D7ItcQFNAYx2hrwkMe56e97xfVR0/ovDuMTrMffXUiltvQljtAGeg==
   /core-js/2.6.9:
     dev: false
     requiresBuild: true
@@ -3990,10 +3968,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-kS/gEPzZs3Y1rRsbGX4UOSjtP/CeJP0CxSNZHYxGfVM/VgLcv0ZqM7C45YyTj2DI2g7+P9Dd24C+IMIg6D0nYQ==
-  /electron-to-chromium/1.3.252:
+  /electron-to-chromium/1.3.253:
     dev: false
     resolution:
-      integrity: sha512-NWJ5TztDnjExFISZHFwpoJjMbLUifsNBnx7u2JI0gCw6SbKyQYYWWtBHasO/jPtHym69F4EZuTpRNGN11MT/jg==
+      integrity: sha512-LAwFRWViiiCSxQ2Lj3mnyEP8atkpAoHSPUnkFoy4mNabbnPHxtfseWvPCGGhewjHQI+ky/V4LdlTyyI0d3YPXA==
   /elliptic/6.5.1:
     dependencies:
       bn.js: 4.11.8
@@ -4083,7 +4061,7 @@ packages:
     dev: false
     resolution:
       integrity: sha1-pfdf/02ZJhJt2sDqXcOOaJFTywI=
-  /es-abstract/1.14.1:
+  /es-abstract/1.14.2:
     dependencies:
       es-to-primitive: 1.2.0
       function-bind: 1.1.1
@@ -4099,7 +4077,7 @@ packages:
     engines:
       node: '>= 0.4'
     resolution:
-      integrity: sha512-cp/Tb1oA/rh2X7vqeSOvM+TSo3UkJLX70eNihgVEvnzwAgikjkTFr/QVgRCaxjm0knCNQzNoxxxcw2zO2LJdZA==
+      integrity: sha512-DgoQmbpFNOofkjJtKwr87Ma5EW4Dc8fWhD0R+ndq7Oc456ivUfGOOP6oAZTTKl5/CcNMP+EN+e3/iUzgE0veZg==
   /es-to-primitive/1.2.0:
     dependencies:
       is-callable: 1.1.4
@@ -5243,7 +5221,7 @@ packages:
       create-error-class: 3.0.2
       duplexer2: 0.1.4
       is-redirect: 1.0.0
-      is-retry-allowed: 1.1.0
+      is-retry-allowed: 1.2.0
       is-stream: 1.1.0
       lowercase-keys: 1.0.1
       node-status-codes: 1.0.0
@@ -5266,7 +5244,7 @@ packages:
       duplexer3: 0.1.4
       get-stream: 3.0.0
       is-redirect: 1.0.0
-      is-retry-allowed: 1.1.0
+      is-retry-allowed: 1.2.0
       is-stream: 1.1.0
       lowercase-keys: 1.0.1
       safe-buffer: 5.2.0
@@ -5563,22 +5541,6 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-LKUKwuJDhxNa3uf/LPR/KVjm/l3rBqtYeCOAekvG8F1vItxMUpueGd94i/asDDr8/1u7InxzFA5EeGjhhG5mMA==
-  /html-webpack-deploy-plugin/2.0.6/9d96fc042dfffb56d94b7017d57c43b4:
-    dependencies:
-      copy-webpack-plugin: /copy-webpack-plugin/5.0.4/webpack@4.28.3
-      find-up: 3.0.0
-      html-webpack-plugin: /html-webpack-plugin/3.2.0/webpack@4.28.3
-      html-webpack-tags-plugin: 2.0.15
-      webpack: /webpack/4.28.3/webpack@4.28.3
-    dev: false
-    engines:
-      node: '>=8'
-    id: registry.npmjs.org/html-webpack-deploy-plugin/2.0.6
-    peerDependencies:
-      html-webpack-plugin: ^2.24.0 || ^3.0.0
-      webpack: ^2.2.1 || ^3.0.0 || ^4.0.0
-    resolution:
-      integrity: sha512-fdzavT6Kuyrmi8u1ogEp3mfCXW9f93u5NP4H2TAnIUq3ggYAjio+M4ZyST8+58nqqrfmhrJZXL2rCMn+CtsZTA==
   /html-webpack-plugin/3.2.0:
     dependencies:
       html-minifier: 3.5.21
@@ -5613,16 +5575,6 @@ packages:
       webpack: ^1.0.0 || ^2.0.0 || ^3.0.0 || ^4.0.0
     resolution:
       integrity: sha1-sBq71yOsqqeze2r0SS69oD2d03s=
-  /html-webpack-tags-plugin/2.0.15:
-    dependencies:
-      glob: 7.1.4
-      minimatch: 3.0.4
-      slash: 3.0.0
-    dev: false
-    engines:
-      node: '>=8'
-    resolution:
-      integrity: sha512-JXfpAcDwzbGwn0MTeBh6HzebksNyjIqi6L7az4HKBOVcC8kBdYq61sigdyHEaYyIYUZ4QC/5N1GFdX0cdcB3Qw==
   /html2canvas/1.0.0-rc.3:
     dependencies:
       css-line-break: 1.1.1
@@ -6280,12 +6232,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-qgDYXFSR5WvEfuS5dMj6oTMEbrrSaM0CrFk2Yiq/gXnBvD9pMa2jGXxyhGLfvhZpuMZe18CJpFxAt3CRs42NMg==
-  /is-retry-allowed/1.1.0:
+  /is-retry-allowed/1.2.0:
     dev: false
     engines:
       node: '>=0.10.0'
     resolution:
-      integrity: sha1-EaBgVotnM5REAz0BJaYaINVk+zQ=
+      integrity: sha512-RUbUeKwvm3XG2VYamhJL1xFktgjvPzL0Hq8C+6yrWIswDy3BIXGqCxhxkc30N9jqK311gVU137K8Ei55/zVJRg==
   /is-stream/1.1.0:
     dev: false
     engines:
@@ -8247,12 +8199,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-M4UBGcs4jeOK9CjTsYwkvH6/MzuUmGCyTW+kCY7uO+1ZVr0+FHGdPdIf5CCLqAaxnRrWidyoQlNkMIIVwbKB8Q==
-  /node-releases/1.1.29:
+  /node-releases/1.1.30:
     dependencies:
       semver: 5.7.1
     dev: false
     resolution:
-      integrity: sha512-R5bDhzh6I+tpi/9i2hrrvGJ3yKPYzlVOORDkXhnZuwi5D3q1I5w4vYy24PJXTcLk9Q0kws9TO77T75bcK8/ysQ==
+      integrity: sha512-BHcr1g6NeUH12IL+X3Flvs4IOnl1TL0JczUhEZjDE+FXXPQcVCNr8NEPb01zqGxzhTpdyJL5GXemaCW7aw6Khw==
   /node-sass/4.11.0:
     dependencies:
       async-foreach: 0.1.3
@@ -8466,7 +8418,7 @@ packages:
   /object.getownpropertydescriptors/2.0.3:
     dependencies:
       define-properties: 1.1.3
-      es-abstract: 1.14.1
+      es-abstract: 1.14.2
     dev: false
     engines:
       node: '>= 0.8'
@@ -8492,7 +8444,7 @@ packages:
   /object.values/1.1.0:
     dependencies:
       define-properties: 1.1.3
-      es-abstract: 1.14.1
+      es-abstract: 1.14.2
       function-bind: 1.1.1
       has: 1.0.3
     dev: false
@@ -13249,7 +13201,6 @@ packages:
       fs-extra: 7.0.1
       glob: 7.1.3
       html-loader: 0.5.5
-      html-webpack-deploy-plugin: /html-webpack-deploy-plugin/2.0.6/9d96fc042dfffb56d94b7017d57c43b4
       html-webpack-plugin: /html-webpack-plugin/3.2.0/webpack@4.28.3
       html2canvas: 1.0.0-rc.3
       http-server: 0.11.1
@@ -13298,7 +13249,7 @@ packages:
     dev: false
     name: '@rush-temp/ramp-core'
     resolution:
-      integrity: sha512-PVvBy4uu1Yo9kWt8j3HwAI26aIC0l15N0rF8wSxc7B/vrY5hULi3/Zz8xBj27cQb2P7oQt90hoRcrUke23HFnQ==
+      integrity: sha512-SCmbC5vPH22H9qPGEDqq/81o588/a5ngaUNMVK9+gW5qU7cxGVR1M9L9FYTFAe5G5SsRLhYBGbexjr5UnSuUaw==
       tarball: 'file:projects/ramp-core.tgz'
     version: 0.0.0
   'file:projects/ramp-geoapi.tgz':
@@ -13333,6 +13284,7 @@ packages:
     version: 0.0.0
   'file:projects/ramp-plugin-areas-of-interest.tgz':
     dependencies:
+      '@types/jquery': 3.3.29
       ts-loader: /ts-loader/5.3.2/typescript@3.6.2
       typescript: 3.6.2
       webpack: /webpack/4.28.3/webpack@4.28.3
@@ -13340,8 +13292,20 @@ packages:
     dev: false
     name: '@rush-temp/ramp-plugin-areas-of-interest'
     resolution:
-      integrity: sha512-1em1fASRDvo+GsRHw8ob83Q2pO0Ko/XFZpzVZWGFvA7UnXauGMCH+RGSAZZNvOUMMTGDyr1AOoSMBM1ZIVzeDQ==
+      integrity: sha512-qIWKDnl2WOUvp86w9Yk+cX8eYvC9YW3SiCgz+aEAkH3Jb1zpzG7vVCbQEfWdW2kHO8Qkp69phHKaW+EMhD4IBQ==
       tarball: 'file:projects/ramp-plugin-areas-of-interest.tgz'
+    version: 0.0.0
+  'file:projects/ramp-plugin-back-to-cart.tgz':
+    dependencies:
+      ts-loader: /ts-loader/5.3.2/typescript@3.6.2
+      typescript: 3.6.2
+      webpack: /webpack/4.28.3/webpack@4.28.3
+      webpack-cli: /webpack-cli/3.1.2/webpack@4.28.3
+    dev: false
+    name: '@rush-temp/ramp-plugin-back-to-cart'
+    resolution:
+      integrity: sha512-4OLy9pSHRf1LYLtY3PAyuLXxc30f8iQFWZeaLuJL2d0u0b/i9xhhATKXFDnEqBUwswecAZe42TZkfsKIZE3EWg==
+      tarball: 'file:projects/ramp-plugin-back-to-cart.tgz'
     version: 0.0.0
   'file:projects/ramp-plugin-cake-export.tgz':
     dependencies:
@@ -13381,21 +13345,18 @@ packages:
     dev: false
     name: terraformer-proj4js
     resolution:
-      registry: 'https://registry.npmjs.org/'
       tarball: 'https://codeload.github.com/RAMP-PCAR/terraformer-proj4js/tar.gz/246cf37a3398494f34d40a1eb603d4de0f1e6e2f'
     version: 0.2.2
   github.com/alyec/docdash/0ac9d0dd482a9b65aa0885d5279fafc566a91f9b:
     dev: false
     name: docdash
     resolution:
-      registry: 'https://registry.npmjs.org/'
       tarball: 'https://codeload.github.com/alyec/docdash/tar.gz/0ac9d0dd482a9b65aa0885d5279fafc566a91f9b'
     version: 0.4.0
   github.com/dotJEM/angular-tree/1819b5150c3da8523629760667a1112cbb18a316:
     dev: false
     name: dotjem-angular-tree
     resolution:
-      registry: 'https://registry.npmjs.org/'
       tarball: 'https://codeload.github.com/dotJEM/angular-tree/tar.gz/1819b5150c3da8523629760667a1112cbb18a316'
     version: 0.2.3
   github.com/fgpv-vpgf/shapefile-js/dd6b31899dee1d70f106b3725430f2eb5f0b350c:
@@ -13408,14 +13369,12 @@ packages:
     dev: false
     name: shpjs
     resolution:
-      registry: 'https://registry.npmjs.org/'
       tarball: 'https://codeload.github.com/fgpv-vpgf/shapefile-js/tar.gz/dd6b31899dee1d70f106b3725430f2eb5f0b350c'
     version: 3.6.0
   github.com/fgpv-vpgf/svg.textflow.js/ae147794bb3cc45a388d0c2bcddf37963c344c8f:
     dev: false
     name: svg.textflow.js
     resolution:
-      registry: 'https://registry.npmjs.org/'
       tarball: 'https://codeload.github.com/fgpv-vpgf/svg.textflow.js/tar.gz/ae147794bb3cc45a388d0c2bcddf37963c344c8f'
     version: 1.0.0
 registry: 'https://registry.npmjs.org/'
@@ -13428,6 +13387,7 @@ specifiers:
   '@rush-temp/ramp-core': 'file:./projects/ramp-core.tgz'
   '@rush-temp/ramp-geoapi': 'file:./projects/ramp-geoapi.tgz'
   '@rush-temp/ramp-plugin-areas-of-interest': 'file:./projects/ramp-plugin-areas-of-interest.tgz'
+  '@rush-temp/ramp-plugin-back-to-cart': 'file:./projects/ramp-plugin-back-to-cart.tgz'
   '@rush-temp/ramp-plugin-cake-export': 'file:./projects/ramp-plugin-cake-export.tgz'
   '@rush-temp/ramp-plugin-eh-table': 'file:./projects/ramp-plugin-eh-table.tgz'
   '@types/angular': 1.6.53

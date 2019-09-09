@@ -4,7 +4,7 @@
 <head>
         <meta charset="utf-8" />
         <meta content="width=device-width,initial-scale=1" name="viewport" />
-        <title>Areas of interst: No Pics</title>
+        <title>Plugin: Back to cart</title>
 
         <style>
             body {
@@ -28,25 +28,17 @@
 
 <body>
 
-    <h1>
-            Federal Geospatial Platform Visualiser -
-            <span style="color:blue">Areas of Interest Demo</span>
-        </h1>
-        <p>
-            <a href="./aoi-pics-index.html">Picturess Demo</a>
-        </p>
-        <script
-            src="https://code.jquery.com/jquery-3.2.1.min.js"
-            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-            crossorigin="anonymous"
-        ></script>
-
     <div class="myMap"
             id="sample-map"
             is="rv-map"
-            rv-config="aoi-no-pics-config.json"
-            rv-langs='["en-CA", "fr-CA"]'
-            rv-plugins="AreasOfInterest" >
+            class="myMap"
+
+            data-rv-config="config.rcs.[lang].json"
+            data-rv-langs='["en-CA", "fr-CA"]'
+            data-rv-service-endpoint="http://section917.cloudapp.net:8000/"
+            data-rv-keys=""
+            data-rv-wait="true"
+            rv-plugins="BackToCart" >
          <noscript>
             <p>This interactive map requires JavaScript. To view this content please enable JavaScript in your browser or download a browser that supports it.<p>
 
@@ -63,6 +55,36 @@
             <script src="<%= htmlWebpackPlugin.files.js[index] %>"></script>
         <% } %>
     <% } %>
+
+    <script>
+            const baseUrl = window.location.href.split('?')[0] + '?keys={RV_LAYER_LIST}';
+
+            /* // Example of programmatically setting the catalogue URL
+            RZ.mapAdded.subscribe(function(mapi) {
+                backToCart.setCatalogueUrl('sample-map', baseUrl);
+            });*/
+
+            function queryStringToJSON(q) {
+                var pairs = q.search.slice(1).split('&');
+                var result = {};
+                pairs.forEach(function(pair) {
+                    pair = pair.split('=');
+                    result[pair[0]] = decodeURIComponent(pair[1] || '');
+                });
+                return JSON.parse(JSON.stringify(result));
+            }
+            // grab & process the url
+            var queryStr = queryStringToJSON(document.location);
+            var keys = queryStr.keys;
+            if (keys) {
+                // turn keys into an array, pass them to the map
+                var keysArr = keys.split(',');
+                RV.getMap('sample-map').restoreSession(keysArr);
+            } else {
+                var bookmark = queryStr.rv;
+                RV.getMap('sample-map').initialBookmark(bookmark);
+            }
+        </script>
 
 </body>
 

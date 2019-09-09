@@ -379,6 +379,10 @@
             "projectFolder": "packages/ramp-plugin-areas-of-interest"
         },
         {
+            "packageName": "ramp-plugin-back-to-cart",
+            "projectFolder": "packages/ramp-plugin-back-to-cart"
+        },
+        {
             "packageName": "ramp-plugin-cake-export",
             "projectFolder": "packages/ramp-plugin-cake-export"
         },
