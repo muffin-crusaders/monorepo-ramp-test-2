@@ -363,13 +363,9 @@
             "projectFolder": "packages/ramp-geoapi"
         },
         {
-            "packageName": "geosearch",
-            "projectFolder": "packages/geosearch"
+            "packageName": "ramp-geosearch",
+            "projectFolder": "packages/ramp-geosearch"
         },
-        /* {
-            "packageName": "plugins",
-            "projectFolder": "packages/plugins"
-        }, */
         {
             "packageName": "ramp-core",
             "projectFolder": "packages/ramp-core"

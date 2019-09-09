@@ -38,6 +38,7 @@
         "linkifyjs": "2.1.7",
         "marked": "0.5.2",
         "ramp-geoapi": "3.1.0",
+        "ramp-geosearch": "3.0.1",
         "ramp-plugin-areas-of-interest": "1.0.0",
         "ramp-plugin-back-to-cart": "1.0.0",
         "ramp-plugin-cake-export": "1.0.0",
@@ -46,7 +47,6 @@
         "rcolor": "1.0.1",
         "remove-markdown": "0.3.0",
         "rxjs": "6.4.0",
-        "rz-geosearch": "3.0.1",
         "screenfull": "4.0.1",
         "svg.textflow.js": "github:fgpv-vpgf/svg.textflow.js"
     },

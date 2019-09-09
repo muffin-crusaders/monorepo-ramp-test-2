@@ -3,7 +3,7 @@
  * @description A feature that provides geo location search
  */
 
-import 'rz-geosearch';
+import { GeoSearch} 'ramp-geosearch';
 
 const CODE_TO_ABBR = {
     10: "NL",
