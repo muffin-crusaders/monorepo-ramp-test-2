@@ -1,5 +1,3 @@
-console.log('sdfsd');
-
 export default class BackToCart {
     // A store of the instances of backToCart, 1 per map
     static instances: { [id: string]: BackToCart } = {};
