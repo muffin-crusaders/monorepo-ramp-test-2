@@ -13,5 +13,6 @@
         "moduleResolution": "node",
         "target": "es5"
     },
+    // need to specify `dist` explicitly, so Webpack watch won't trigger on file changes in the `dist` folder
     "exclude": ["tests", "dist"]
 }
