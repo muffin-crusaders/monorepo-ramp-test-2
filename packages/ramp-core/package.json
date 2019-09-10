@@ -6,7 +6,7 @@
     "repository": "https://github.com/fgpv-vpgf/fgpv-vpgf",
     "license": "MIT",
     "scripts": {
-        "build": "webpack",
+        "build": "webpack --display-error-details",
         "serve": "webpack-dev-server --progress --hot --inline --env.hmr",
         "protractor": "node scripts/protractor/run.js",
         "server": "http-server ./build -p 6002",

@@ -1,5 +1,5 @@
 import schemaUpgrade from './schema-upgrade.service.js';
-import geoapi from 'ramp-geoApi';
+import geoapi from 'ramp-geoapi';
 /**
  * @module configService
  * @memberof app.core

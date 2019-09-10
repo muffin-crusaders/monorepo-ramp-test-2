@@ -27,14 +27,18 @@ module.exports = function(env) {
         : path.resolve(__dirname, 'node_modules/geoApi');
 
     const config = {
+        stats: 'errors-only',
         entry: {
             'legacy-api': path.resolve(__dirname, 'src/legacy-api.ts'),
-            'rv-main': path.resolve(__dirname, 'src/app/app-loader.js'),
+            'rv-main': path.resolve(__dirname, 'src/app/app-loader.js')
             // NOTE: [monoRAMP] add a separate entry for each plugin so they are properly copied over and hot-wired
-            'ramp-plugin-areas-of-interest': path.resolve(__dirname, 'node_modules/ramp-plugin-areas-of-interest'),
+
+            //'ramp-plugins': path.resolve(__dirname, 'src/plugins-entry.ts')
+
+            /* 'ramp-plugin-areas-of-interest': path.resolve(__dirname, 'node_modules/ramp-plugin-areas-of-interest'),
             'ramp-plugin-back-to-cart': path.resolve(__dirname, 'node_modules/ramp-plugin-back-to-cart'),
             'ramp-plugin-cake-export': path.resolve(__dirname, 'node_modules/ramp-plugin-cake-export'),
-            'ramp-plugin-coordinate-info': path.resolve(__dirname, 'node_modules/ramp-plugin-coordinate-info')
+            'ramp-plugin-coordinate-info': path.resolve(__dirname, 'node_modules/ramp-plugin-coordinate-info') */
         },
 
         output: {
@@ -68,10 +72,10 @@ module.exports = function(env) {
                         {
                             loader: 'babel-loader',
                             options: babelPresets
-                        },
+                        } /* ,
                         {
                             loader: 'eslint-loader'
-                        }
+                        } */
                     ]
                 },
                 {
