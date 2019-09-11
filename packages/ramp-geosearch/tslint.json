@@ -27,7 +27,6 @@
         "no-null-keyword": true,
         "no-switch-case-fall-through": true,
 
-        "no-unnecessary-qualifier": true,
         "no-var-keyword": true,
         "object-literal-shorthand": true,
         "one-line": [true, "check-open-brace", "check-whitespace"],
@@ -52,15 +51,7 @@
                 "variable-declaration": "onespace"
             }
         ],
-        "whitespace": [
-            true,
-            "check-branch",
-            "check-decl",
-            "check-operator",
-            "check-module",
-            "check-separator",
-            "check-type"
-        ],
+        "whitespace": [true, "check-branch", "check-decl", "check-operator", "check-module", "check-separator", "check-type"],
         "no-reference": true,
         "no-implicit-dependencies": [true, "dev"],
         "variable-name": [true, "ban-keywords", "check-format", "allow-leading-underscore"],

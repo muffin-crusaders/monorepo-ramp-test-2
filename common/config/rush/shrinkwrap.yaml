@@ -34,7 +34,7 @@ dependencies:
   babel-preset-stage-2: 6.24.1
   babel-runtime: 6.26.0
   canvg-origin: 1.0.0
-  clean-webpack-plugin: 1.0.0
+  clean-webpack-plugin: 3.0.0
   copy-webpack-plugin: 4.6.0
   css-loader: 2.1.0
   csv2geojson: 5.0.2
@@ -214,6 +214,10 @@ packages:
     dev: false
     resolution:
       integrity: sha512-46op53S8hnDl9o6VOmMAXBv3laK8i2OyXOfriDwe6VRfh8wVFilIniLaNsz2pPpAM4oUwsBYFt7ZThe+IMnIeA==
+  /@types/anymatch/1.3.1:
+    dev: false
+    resolution:
+      integrity: sha512-/+CRPXpBDpo2RK9C68N3b2cOvO0Cf5B9aPijHsoDQTHivnGSObdOF2BRQOYjojWTDy6nQvMjmqRXIxH55VjxxA==
   /@types/cli-color/0.3.29:
     dev: false
     resolution:
@@ -224,7 +228,7 @@ packages:
       integrity: sha512-EaObqwIvayI5a8dCzhFrjKzVwKLxjoG9T6Ppd5CEo07LRKfQ8Yokw54r5+Wq7FaBQ+yXRvQAYPrHwya1/UFt9g==
   /@types/fs-extra/5.1.0:
     dependencies:
-      '@types/node': 12.7.4
+      '@types/node': 12.7.5
     dev: false
     resolution:
       integrity: sha512-AInn5+UBFIK9FK5xc9yP5e3TQSPNNgjHByqYcj9g5elVBnDQcQL7PlO1CIRy2gWlbwK7UPYqi7vRvFA44dCmYQ==
@@ -237,7 +241,7 @@ packages:
     dependencies:
       '@types/events': 3.0.0
       '@types/minimatch': 3.0.3
-      '@types/node': 12.7.4
+      '@types/node': 12.7.5
     dev: false
     resolution:
       integrity: sha512-1Bh06cbWJUHMC97acuD6UMG29nMt0Aqz1vF3guLfG+kHHJhy3AyohZFFxYk2f7Q1SQIrNwvncxAE0N/9s70F2w==
@@ -288,18 +292,18 @@ packages:
       integrity: sha1-aaI6OtKcrwCX8G7aWbNh7i8GOfY=
   /@types/mz/0.0.32:
     dependencies:
-      '@types/node': 12.7.4
+      '@types/node': 12.7.5
     dev: false
     resolution:
       integrity: sha512-cy3yebKhrHuOcrJGkfwNHhpTXQLgmXSv1BX+4p32j+VUQ6aP2eJ5cL7OvGcAQx75fCTFaAIIAKewvqL+iwSd4g==
-  /@types/node/10.14.17:
+  /@types/node/10.14.18:
     dev: false
     resolution:
-      integrity: sha512-p/sGgiPaathCfOtqu2fx5Mu1bcjuP8ALFg4xpGgNkcin7LwRyzUKniEHBKdcE1RPsenq5JVPIpMTJSygLboygQ==
-  /@types/node/12.7.4:
+      integrity: sha512-ryO3Q3++yZC/+b8j8BdKd/dn9JlzlHBPdm80656xwYUdmPkpTGTjkAdt6BByiNupGPE8w0FhBgvYy/fX9hRNGQ==
+  /@types/node/12.7.5:
     dev: false
     resolution:
-      integrity: sha512-W0+n1Y+gK/8G2P/piTkBBN38Qc5Q1ZSO6B5H3QmPCUewaiXOo2GCAWZ4ElZCcNhjJuBSUSLGFUJnmlCn5+nxOQ==
+      integrity: sha512-9fq4jZVhPNW8r+UYKnxF1e2HkDWOWKM5bC2/7c9wPV835I0aOrVbS/Hw/pWPk2uKrNXQqg9Z959Kz+IYDd5p3w==
   /@types/prettier/1.18.2:
     dev: false
     resolution:
@@ -319,7 +323,7 @@ packages:
   /@types/shelljs/0.8.5:
     dependencies:
       '@types/glob': 7.1.1
-      '@types/node': 12.7.4
+      '@types/node': 12.7.5
     dev: false
     resolution:
       integrity: sha512-bZgjwIWu9gHCjirKJoOlLzGi5N0QgZ5t7EXEuoqyWCHTuSddURXo3FOBYDyRPNOWzZ6NbkLvZnVkn483Y/tvcQ==
@@ -327,10 +331,43 @@ packages:
     dev: false
     resolution:
       integrity: sha512-7EJYyKTL7tFR8+gDbB6Wwz/arpGa0Mywk1TJbNzKzHtzbwVmY4HR9WqS5VV7dsBUKQmPNr192jHr/VpBluj/hg==
+  /@types/source-list-map/0.1.2:
+    dev: false
+    resolution:
+      integrity: sha512-K5K+yml8LTo9bWJI/rECfIPrGgxdpeNbj+d53lwN4QjW1MCwlkhUms+gtdzigTeUyBr09+u8BwOIY3MXvHdcsA==
+  /@types/tapable/1.0.4:
+    dev: false
+    resolution:
+      integrity: sha512-78AdXtlhpCHT0K3EytMpn4JNxaf5tbqbLcbIRoQIHzpTIyjpxLQKRoxU55ujBXAtg3Nl2h/XWvfDa9dsMOd0pQ==
   /@types/text-encoding/0.0.35:
     dev: false
     resolution:
       integrity: sha512-jfo/A88XIiAweUa8np+1mPbm3h2w0s425YrI8t3wk5QxhH6UI7w517MboNVnGDeMSuoFwA8Rwmklno+FicvV4g==
+  /@types/uglify-js/3.0.4:
+    dependencies:
+      source-map: 0.6.1
+    dev: false
+    resolution:
+      integrity: sha512-SudIN9TRJ+v8g5pTG8RRCqfqTMNqgWCKKd3vtynhGzkIIjxaicNAMuY5TRadJ6tzDu3Dotf3ngaMILtmOdmWEQ==
+  /@types/webpack-sources/0.1.5:
+    dependencies:
+      '@types/node': 12.7.5
+      '@types/source-list-map': 0.1.2
+      source-map: 0.6.1
+    dev: false
+    resolution:
+      integrity: sha512-zfvjpp7jiafSmrzJ2/i3LqOyTYTuJ7u1KOXlKgDlvsj9Rr0x7ZiYu5lZbXwobL7lmsRNtPXlBfmaUD8eU2Hu8w==
+  /@types/webpack/4.39.1:
+    dependencies:
+      '@types/anymatch': 1.3.1
+      '@types/node': 12.7.5
+      '@types/tapable': 1.0.4
+      '@types/uglify-js': 3.0.4
+      '@types/webpack-sources': 0.1.5
+      source-map: 0.6.1
+    dev: false
+    resolution:
+      integrity: sha512-rgO9ihNu/l72Sjx3shqwc9r6gi+tOMsqxhMEZhOEVIZt82GFOeUyEdpTk1BO2HqEHLS/XJW8ldUTIIfIMMyYFQ==
   /@webassemblyjs/ast/1.7.11:
     dependencies:
       '@webassemblyjs/helper-module-context': 1.7.11
@@ -2059,7 +2096,7 @@ packages:
   /browserslist/2.11.3:
     dependencies:
       caniuse-lite: 1.0.30000989
-      electron-to-chromium: 1.3.254
+      electron-to-chromium: 1.3.255
     deprecated: Browserslist 2 could fail on reading Browserslist >3.0 config used in other tools.
     dev: false
     hasBin: true
@@ -2068,7 +2105,7 @@ packages:
   /browserslist/4.7.0:
     dependencies:
       caniuse-lite: 1.0.30000989
-      electron-to-chromium: 1.3.254
+      electron-to-chromium: 1.3.255
       node-releases: 1.1.30
     dev: false
     hasBin: true
@@ -2480,12 +2517,30 @@ packages:
       node: '>= 4.0'
     resolution:
       integrity: sha512-4ZxI6dy4lrY6FHzfiy1aEOXgu4LIsW2MhwG0VBKdcoGoH/XLFgaHSdLTGr4O8Be6A8r3MOphEiI8Gc1n0ecf3g==
-  /clean-webpack-plugin/1.0.0:
+  /clean-webpack-plugin/3.0.0:
     dependencies:
-      rimraf: 2.7.1
+      '@types/webpack': 4.39.1
+      del: 4.1.1
     dev: false
+    engines:
+      node: '>=8.9.0'
+    peerDependencies:
+      webpack: '*'
     resolution:
-      integrity: sha512-+f96f52UIET4tOFBbCqezx7KH+w7lz/p4fA1FEjf0hC6ugxqwZedBtENzekN2FnmoTF/bn1LrlkvebOsDZuXKw==
+      integrity: sha512-MciirUH5r+cYLGCOL5JX/ZLzOZbVr1ot3Fw+KcvbhUb6PM+yycqd9ZhIlcigQ5gl+XhppNmw3bEFuaaMNyLj3A==
+  /clean-webpack-plugin/3.0.0/webpack@4.28.3:
+    dependencies:
+      '@types/webpack': 4.39.1
+      del: 4.1.1
+      webpack: 4.28.3
+    dev: false
+    engines:
+      node: '>=8.9.0'
+    id: registry.npmjs.org/clean-webpack-plugin/3.0.0
+    peerDependencies:
+      webpack: '*'
+    resolution:
+      integrity: sha512-MciirUH5r+cYLGCOL5JX/ZLzOZbVr1ot3Fw+KcvbhUb6PM+yycqd9ZhIlcigQ5gl+XhppNmw3bEFuaaMNyLj3A==
   /cli-boxes/1.0.0:
     dev: false
     engines:
@@ -3459,6 +3514,20 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha1-U+z2mf/LyzljdpGrE7rxYIGXZuU=
+  /del/4.1.1:
+    dependencies:
+      '@types/glob': 7.1.1
+      globby: 6.1.0
+      is-path-cwd: 2.2.0
+      is-path-in-cwd: 2.1.0
+      p-map: 2.1.0
+      pify: 4.0.1
+      rimraf: 2.7.1
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-QwGuEUouP2kVwQenAsOof5Fv8K9t3D8Ca8NxcXKrIpEHjTXK5J2nXLdP+ALI1cgv8wj7KuwBhTwBkOZSJKM5XQ==
   /delayed-stream/1.0.0:
     dev: false
     engines:
@@ -3757,10 +3826,10 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-kS/gEPzZs3Y1rRsbGX4UOSjtP/CeJP0CxSNZHYxGfVM/VgLcv0ZqM7C45YyTj2DI2g7+P9Dd24C+IMIg6D0nYQ==
-  /electron-to-chromium/1.3.254:
+  /electron-to-chromium/1.3.255:
     dev: false
     resolution:
-      integrity: sha512-7I5/OkgR6JKy6RFLJeru0kc0RMmmMu1UnkHBKInFKRrg1/4EQKIqOaUqITSww/SZ1LqWwp1qc/LLoIGy449eYw==
+      integrity: sha512-SZ6NlaNw3h4WR5kA1BK8XltdJCax02P+lW+z78RYoLDqmpyYuDQ5bS+/O6MCJ/j761qoZIFox2qYYt+UwqGA5w==
   /elliptic/6.5.1:
     dependencies:
       bn.js: 4.11.8
@@ -5891,6 +5960,12 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-0iXsIxMuie3Tj9p2dHLmLmXxEG0=
+  /is-path-cwd/2.2.0:
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-w942bTcih8fdJPJmQHFzkS76NEP8Kzzvmw92cXsazb8intwLqPibPPdXf4ANdKV3rYMuuQYGIWtvz9JilB3NFQ==
   /is-path-in-cwd/1.0.1:
     dependencies:
       is-path-inside: 1.0.1
@@ -5899,6 +5974,14 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha512-FjV1RTW48E7CWM7eE/J2NJvAEEVektecDBVBE5Hh3nM1Jd0kvhHtX68Pr3xsDf857xt3Y4AkwVULK1Vku62aaQ==
+  /is-path-in-cwd/2.1.0:
+    dependencies:
+      is-path-inside: 2.1.0
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-rNocXHgipO+rvnP6dk3zI20RpOtrAM/kzbB258Uw5BWr3TpXi861yzjo16Dn4hUox07iw5AyeMLHWsujkjzvRQ==
   /is-path-inside/1.0.1:
     dependencies:
       path-is-inside: 1.0.2
@@ -5907,6 +5990,14 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-jvW33lBDej/cprToZe96pVy0gDY=
+  /is-path-inside/2.1.0:
+    dependencies:
+      path-is-inside: 1.0.2
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-wiyhTzfDWsvwAW53OBWF5zuvaOGlZ6PwYxAbPVDhpm+gM09xKQGjBq/8uYN12aDvMxnAnq3dxTyoSoRNmg5YFg==
   /is-plain-object/2.0.4:
     dependencies:
       isobject: 3.0.1
@@ -6724,7 +6815,7 @@ packages:
       '@types/lodash': 4.14.138
       '@types/minimist': 1.2.0
       '@types/mz': 0.0.32
-      '@types/node': 10.14.17
+      '@types/node': 10.14.18
       '@types/prettier': 1.18.2
       cli-color: 1.4.0
       json-schema-ref-parser: 6.1.0
@@ -8391,6 +8482,12 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-r6zKACMNhjPJMTl8KcFH4li//gkrXWfbD6feV8l6doRHlzljFWGJ2AP6iKaCJXyZmAUMOPtvbW7EXkbWO/pLEA==
+  /p-map/2.1.0:
+    dev: false
+    engines:
+      node: '>=6'
+    resolution:
+      integrity: sha512-y3b8Kpd8OAN444hxfBbFfj1FY/RjtTd8tzYwhUqNYXx0fXx2iX4maP4Qr6qhIKbQXI02wTLAda4fYUbDagTUFw==
   /p-try/1.0.0:
     dev: false
     engines:
@@ -12721,7 +12818,7 @@ packages:
       babel-plugin-transform-runtime: 6.23.0
       babel-preset-env: 1.6.1
       babel-runtime: 6.26.0
-      clean-webpack-plugin: 1.0.0
+      clean-webpack-plugin: /clean-webpack-plugin/3.0.0/webpack@4.28.3
       copy-webpack-plugin: 4.6.0
       css-loader: /css-loader/2.1.0/webpack@4.28.3
       csvtojson: 1.1.11
@@ -12781,7 +12878,7 @@ packages:
     dev: false
     name: '@rush-temp/ramp-core'
     resolution:
-      integrity: sha512-fQnOaKWwTuSKWD7wYoNlfvp2yElm7Gyi48CC9wpsfjFIeFxCefLROt4bglRgdn0UhFHqOTGcnnOIkZ1MaaVKOg==
+      integrity: sha512-mt8NWpK8BO1rpjK56H4kV3x6j5vJ/nTRcNnbLefNj8FZAyhAcaGtqJIqF5o+Q4+5uG7LxmAxFnf/uRtiD+2QLA==
       tarball: 'file:projects/ramp-core.tgz'
     version: 0.0.0
   'file:projects/ramp-geoapi.tgz':
@@ -12984,7 +13081,7 @@ specifiers:
   babel-preset-stage-2: ^6.24.1
   babel-runtime: 6.26.0
   canvg-origin: ^1.0.0
-  clean-webpack-plugin: 1.0.0
+  clean-webpack-plugin: 3.0.0
   copy-webpack-plugin: 4.6.0
   css-loader: 2.1.0
   csv2geojson: 5.0.2

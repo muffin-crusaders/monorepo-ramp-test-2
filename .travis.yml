@@ -25,7 +25,10 @@ script:
     - echo 'Building...' && echo -en 'travis_fold:start:build\\r'
     # - cd packages/ramp-core
     # - npm run build
-    - node common/scripts/install-run-rush.js rebuild --verbose
+
+    # - node common/scripts/install-run-rush.js rebuild --verbose
+    - node common/scripts/install-run-rush.js rebuild
+
     # - sleep 100
     - echo -en 'travis_fold:end:build\\r'
 

@@ -8,7 +8,7 @@ const SchemaValidatorPlugin = require('./scripts/webpack/schema_validation_plugi
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const VersionPlugin = require('./scripts/webpack/version_plugin.js');
 const WrapperPlugin = require('wrapper-webpack-plugin');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const WebpackShellPlugin = require('webpack-shell-plugin');
@@ -27,7 +27,7 @@ module.exports = function(env) {
         : path.resolve(__dirname, 'node_modules/geoApi');
 
     const config = {
-        stats: 'errors-only',
+        // stats: 'errors-only',
         entry: {
             'legacy-api': path.resolve(__dirname, 'src/legacy-api.ts'),
             'rv-main': path.resolve(__dirname, 'src/app/app-loader.js')
@@ -170,7 +170,8 @@ module.exports = function(env) {
 
             new VersionPlugin(),
 
-            new CleanWebpackPlugin(['build', 'dist']),
+            // NOTE: [monoRAMP] new version of this plugin cleans the output directory by default
+            new CleanWebpackPlugin(),
 
             new SchemaValidatorPlugin()
         ],

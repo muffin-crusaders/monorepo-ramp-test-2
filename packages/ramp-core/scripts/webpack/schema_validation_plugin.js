@@ -1,10 +1,9 @@
-const schemaToTs = require( 'json-schema-to-typescript');
-const ZSchema   = require("z-schema");
-const fs        = require('fs');
+const schemaToTs = require('json-schema-to-typescript');
+const ZSchema = require('z-schema');
+const fs = require('fs');
 
 class SchemaValidatorPlugin {
-
-    constructor (opts = {}) {
+    constructor(opts = {}) {
         this.validator = new ZSchema({ breakOnFirstError: false });
         this.configPath = opts.configPath ? opts.configPath : 'src/content/samples/config';
         this.schemaFile = opts.schemaFile ? opts.schemaFile : 'schema.json';
@@ -13,8 +12,11 @@ class SchemaValidatorPlugin {
         schemaToTs.compileFromFile(this.schemaFile).then(ts => fs.writeFileSync('api/src/schema.d.ts', ts));
     }
 
-    apply (compiler) {
-        compiler.plugin('compile', compilation => {
+    apply(compiler) {
+        const id = 'schema-validation-plugin';
+        // NOTE: [monoRAMP] fixing deprecation warning
+        compiler.hooks.compile.tap(id, compilation => {
+            // compiler.plugin('compile', compilation => {
             console.log('\n\nSchema validation');
             this.getConfigList().forEach(this.validateConfig.bind(this));
             if (this.hasError) {
@@ -25,18 +27,14 @@ class SchemaValidatorPlugin {
         });
     }
 
-    get schema () {
-        this._schema = this._schema ?
-            this._schema :
-            JSON.parse(fs.readFileSync(this.schemaFile, 'utf8'));
+    get schema() {
+        this._schema = this._schema ? this._schema : JSON.parse(fs.readFileSync(this.schemaFile, 'utf8'));
 
         return this._schema;
     }
 
-    getConfigList () {
-        return fs
-            .readdirSync(this.configPath)
-            .filter(fName => /\.json$/.test(fName))
+    getConfigList() {
+        return fs.readdirSync(this.configPath).filter(fName => /\.json$/.test(fName));
     }
 
     validateConfig(fName) {
