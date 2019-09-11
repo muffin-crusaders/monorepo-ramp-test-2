@@ -35,9 +35,9 @@ fi
 echo "Destintation: $DESTDIR"
 
 # delete the previous build if present
-az storage blob delete-batch --account-name $AZ_STORAGE_ACCOUNT -s \$web --pattern "$DESTDIR\*"
+az storage blob delete-batch --account-name $AZ_STORAGE_ACCOUNT -s \$web --pattern "$DESTDIR\*" > /dev/null 2>&1
 
-az storage blob upload-batch --account-name $AZ_STORAGE_ACCOUNT -d "\$web/$DESTDIR/dist" -s "packages/ramp-core/build"
+az storage blob upload-batch --account-name $AZ_STORAGE_ACCOUNT -d "\$web/$DESTDIR/dist" -s "packages/ramp-core/build" > /dev/null 2>&1
 
 #if [ "$mProc" == "prod" ]; then
 #    az storage blob upload-batch --account-name $AZ_STORAGE_ACCOUNT -d "\$web/$DESTDIR/prod" -s "build"

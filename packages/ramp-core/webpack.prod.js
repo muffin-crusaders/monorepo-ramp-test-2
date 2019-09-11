@@ -40,6 +40,7 @@ module.exports = function(env) {
             minimizer: [
                 new TerserPlugin({
                     extractComments: true,
+                    // exclude:
                     sourceMap: true,
                     terserOptions: {
                         compress: {

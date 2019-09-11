@@ -33,8 +33,6 @@ module.exports = function(env) {
             'rv-main': path.resolve(__dirname, 'src/app/app-loader.js'),
             // NOTE: [monoRAMP] add a separate entry for each plugin so they are properly copied over and hot-wired
 
-            //'ramp-plugins': path.resolve(__dirname, 'src/plugins-entry.ts')
-
             'ramp-plugin-areas-of-interest': path.resolve(__dirname, 'node_modules/ramp-plugin-areas-of-interest'),
             'ramp-plugin-back-to-cart': path.resolve(__dirname, 'node_modules/ramp-plugin-back-to-cart'),
             'ramp-plugin-cake-export': path.resolve(__dirname, 'node_modules/ramp-plugin-cake-export'),
