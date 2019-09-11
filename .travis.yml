@@ -2,34 +2,21 @@ sudo: required
 dist: trusty
 language: node_js
 node_js:
-    - '10.16.1'
-
+    - 10.16.1
 script:
     - set -e
-
-    - ls -l /home/travis/build/muffin-crusaders/monorepo-ramp-test-2/node_modules/
 
     - echo 'Checking for missing change logs...' && echo -en 'travis_fold:start:change\\r'
     - git fetch origin master:refs/remotes/origin/master -a
     - node common/scripts/install-run-rush.js change -v
     - echo -en 'travis_fold:end:change\\r'
 
-    - ls -l /home/travis/build/muffin-crusaders/monorepo-ramp-test-2/node_modules/
-
     - echo 'Installing...' && echo -en 'travis_fold:start:install\\r'
     - node common/scripts/install-run-rush.js install
     - echo -en 'travis_fold:end:install\\r'
 
-    - ls -l /home/travis/build/muffin-crusaders/monorepo-ramp-test-2/node_modules/
-
     - echo 'Building...' && echo -en 'travis_fold:start:build\\r'
-    # - cd packages/ramp-core
-    # - npm run build
-
-    # - node common/scripts/install-run-rush.js rebuild --verbose
-    - node common/scripts/install-run-rush.js rebuild
-
-    # - sleep 100
+    - node common/scripts/install-run-rush.js rebuild --verbose
     - echo -en 'travis_fold:end:build\\r'
 
 before_deploy:
@@ -94,3 +81,7 @@ env:
         - secure: A08VL7seDDDAnXdFH/JPfpwOl+R9zxkP4mNB3zV56ltUQHB/beIAUeAKFn1D9CDkvMBkgiLU+lBoky1stjMuEtvsEcZmtEbpnofrwA04iPaMyjsdtAD8cZYWzjA9gTZsb6kpQN8TpfoTPxhOFGKX2m+xomGU9HNCvMno2T64k8YY9YTQM7Rrb7ipDc6R72VmVvQMwCYepYDlxdp19Xu8QKm8qFnVtcj174zhjo8AZ+W1vlNGxJpG4OIT3LiigZMCRLedJmZJPOhwSFuSmqrCKS2JS2VN2Gf4jkLVRWQbUMhcvwp2x1uwA737Lf8nVi8ziI0VRwygmmoTZZ6UIRmB2xLwpiT9DE/HqqTlhluo2wgEOuNxMElEHsBGYHzeJQlJXM1xmdgYdt9YSuuZo9fbdGrUuSkiDAlrpMnUsfBrnopBRDT/VpO9fAe0i7D8kl1M5v/ntihc9G2bYqo4X8W9WfrbZmqlgLp3Ahy+ERlw0IHG0fMIMUMBvkLObtgEUMRhof6VTCiLuIkG1aoFLW41UchoWUsiDwdMvxMlLHnDPH52Qu09yInFU04wcf/sQ96W+FP2d/VUEUkeqpRYsD6XcxbDlnUPBuxOyz+8l5/sVWlI/Ljn8y8aovVtDJn67S8orhFstyXW53AD9t6YuWzvCRJRThIBJFxPlq+juvPy7FU=
         - secure: X24JC2A+XvWBo58ivw3nclc7cr7SmJo3zRGHf9it8YCiHWGd4/k1B2Z1T3Lpj+VMEdoWCPN17hRS3kUuJ4UP6ZvzeffFT8c3GBYdWOZr2OZbxxrUrrUc07f5zKjEvVMeFLBoYZCKIlqjY1O+pnK6RIzv3yzInBnKROn3L9gPQh9E7J/9bH+h2PoGuELIIXaXwuiE4TiazgvcCynGa36+51N2od2kH6jPYomV5unaWH7kfrYB/FlLR+eWpqSq4HYF0CJvdDBnoaglzN4fzzLeGZM+TeGTv7MFs/bleZIMpwsoA4XFEIxKHvHS+mD9+65WuyAKOYyMcvVLZVFSWX++DIBsp/qeJRcEdSSCw7oFHDRqeudvrAWWqI2VCoS2m9uh+PWYDdC7Ck0IIek3OuTpBqt1/HIWw102bixWVmpW2cjsSY+CgP9K/qxX8fupTvCTu+dFhbCZ5yn43jlLm2vMbnXV5Tup/oYP0IujXTa/LmvQEJaCaSHS4ZI79a5NM3N2yDbgrxp+QsV27f5p5GmYutNWV8hIHaRPNq8PnUucq8DwWAAjbvFMPuKfCjtebWflSvdRXh4yxa9uveIHRTPOAujsXx1JFjnQigehIx50yALPK3xOUnTGbqyUuklJLXofp8g574t2BA6/wq6bWm18Xjng0NnbuQBqcWpluz6lW1g=
         - secure: nUyO1VFtEBXCYG6byK6PSYR+Utzi6RcnIb7OfUxcLtAusZSlARjEiTYmf6xUYvl6/frHLN5hZZ/cPsxjPm83gf9d9A14GOwHF0Wfq0rF6gvc0obSMFgfzB2QTBH/RDATvCyP/IGnndvOSC23z2BExbF6cErzFTngfYi+xQR2MvUqKAe9mshCLT3Z5hUFuDXKORVC6kJMTb1UfCsAkXi8mgIUNVdLGOgdBSTos1IGOIBrGueR0TMP7vXJWse7XcKq86YkZzKQ23ahCSvcgk05z3BrQ1qd07+ygeHb2bpnDE+UTGzVyz3fjTPNdeiPsJ9n3XOHdXtceBX4U8RQP/fNR2+bLh/MwgI2bniz5AeTPoX2hu63W/Or5cpuORttFPaoQB096lOUaeLsYRgqE9jIkXclLZZtHXrY/k/y9/m7nTgKd6e4Z+pkmvMQ3QxDofzgxleyQlU5Fg3t+efSCelwoR0auX5sWChDZnsSp+Jp5rYnCatcKckIxefZOKeU6ZaZCvU+7cUxeYz1hWAlySBu5bXSaeMCnLQ8EUHsRixbF+x9FUn5NQiYahFGak2WkvEAo23Id9eDSQzZDW2wRcBSM6JVSeyx8xf/T9EhuwcTuTPKQ08yAadotTQJYSu5b0rqOW0TgAh+ARFGpIFXcszyv+Ioid2wCxm/dVlp4jqGFcY=
+        - secure: MvtjlEiJjtrXD5wkdOaEJXd7jsxBmvbBzvkA5a8G+znLyM6J/vcBFqh6W37IL4PsOQu5VeKk9vqLHlC6lvvr1h3vFZqqpckKwm26kJq4TdZ0UnrhnyOpWc8lbTS0QR3vmBAs/J2B77oZNfGspr1Fr+pbvhSLCKaUBd4vYNE5dH63EfFU8EHNxEZSHAWsAWEGZds0vnFvajCnRoP1KJcob68nddEooPCB/oza1pT2pRXCq6/nnbPi1qMfi0ihromtXCuoXhtKLM+XehuRfSf4V6IzPJO71CkKco2c4aRbFYJxMsIdUODFEPbATAonhCFHLufE6Z1TDYdMPFb15MOJI1XtaKcgomiqf9ulyn7leg/hTI6FPJIi6CPkpl3EUdtxk87SBQxLEgS10qKxwkBlrxh67Swgi8D3kSAo2SxgrzufOYVfo0Frpid0Pn9UC/mcqQidDpJL1YfsFtcAPSPmLnPUKYsKF69PiG9ODW5jD90ZMLED2VsNCGeKsR31KGdP81p7Q6X4PI6OczL6v5MdO0HdoEHxR16I5mlSuaYxMMUBRwuvTAv5koOHKh1DiAF3di6xNfvP5higKNgHDgXoDMzgkEHc44hxv1VBV1DfruzWmFAXa58cmE7Q909CoCVV35n9FW1ZZWl15tdNGQ0qX8Z8WAIrFNzqkcxepbvcsJU=
+        - secure: KCGrpWT/Qa60b5Gm5UhwG7iRJvIQGPuA6kbvbOIwEJ9NTKPJOdmyTgsQM406lsnD4hUQBSQhVbj/QQyZ3pchyu1HM+Lv7HU8toHzw243u4T5B5db3ZU6jqG5t60r3QX4EDB5y+Bw9kzQEX3LwajY+6LH0HXejZZaCEttqJuGup3X0h6p+l25lay/fBkPRmuQwfblN2YtVbXcwZxFgm5Syh3qm3623fV/aX27rHomVdepqGEug9XYSziLUu4Qn04Of/Wumoyz3stSUXpXFCBF7ZyAG4ZdH7QX8rfpyp/IIXaynBRfUeqOOG88rpySlJj/9Ij80Xbelt/ms8g8XfEI55CBENhi9yxyQZpC3qy9diqdaC2R+2+H8Yw3nbG217+0KbWR6fouokFTA+vwnus9/UABHYXE8/BeqiqP+bhFoYLfdt3Lx2iUCcoc+sB9UwhPgkxv78DfxWdYxon7K50n274UmpYlprevM6TUER8Z2vROkVnYtXYFMt6tKAcu3E4IbkOYpb7Z5gzdVBivXfXww7QTb5KKqofFLMCu8WbqRYFe3IfOv0xioUg/CwFi7C9AW/oHGa6WKAx0W9KNjZm4GGRiHwi0ZU7gbAFdYIagjv5uThjFhR/BcQ+LgyFElcfNrQYZVES8Iy0JfC5S0ISwfbESpubrkwHHsScQIN2vBAw=
+        - secure: ax7RDvVBN2I8w+7OKEbUjwvwIigHfxb0uHcMUoHOrG8/AGCAFdxF0ys+UMCzNh6GlvYKWm+GbKBhaZ8XqTY9/T7WtKgDJNIMU3RtHDV5dqrrJZnVFL/PxKfJuWn0CSE0ijafLnxH+T4GuuZ8apy0EvABNw8H1KB598IN9IyWclQHmyKgR/sTGPqB8IbdgrqArXq3j8O603tpP2/QG3fa7MMJ4gELXHWNZeV/UDj++bAy6hmhdcjk3fQJzVrc2Sr2f+7PUaLzMYOI4xTF0udORxiG53WItEBNtIgT+7Q5buR1sAgQG54y/WqCJTeErq7h/yzGogUvVaWypmTQegqe1boMeVHcLboGP0v676VTNglDd+AAmkHrTK4s0SYNauGoBgqw2HFqS4rJ68yh0NK2WdLvkvyX7VrRHR3FKJFzOa6kWWjtWpuCF1BtMIGRItInEKL3D60DzyTalSmLKH4d51dDvw7Ti814HmbWJdUaHxZvz3iTtOfVniOH5/whVl2gvBfYoJP2ztzF9aLwFUB2l/D8QkzOMKsi7zB7wKWxTnhUmhFp1y1kfz375H4TGnWmbu7J/hD4dBnbFmlmh+XORbX0ljr1FsH4CVYDe01PLSJjxPgB/GpfG/CnyDij/vBAHoVa+ekzRJ5jtEC9aiQm/cO+nG4aE2Y5UK+IfnANTF8=
+        - secure: VSYr89O2jA+lrsZqsoCvTbIsE0Q01F+7B83+vR1nR0ZPsAz/k/QP+AIPPiIKfmDVxtgWD82VF7VX4fvMYPPJjf5sGypxyPVozs7CWvGmNstVtNeZUGk1N2cfIJOzJK0kwfmj29MJYPlyjZJ/5aGyCmJPwXuuvgMFDwxVPijze660A5Qm25MNnnpiUWg2pSnuMAFgEe6qq4lm4lnEaROcGR0F5rEFfskRa5aqs+v9xmAueOm/6RV8onqH+T62eM51m3/yb+UAsihmFmRHzFCmpV07v/2SjI1VwMJpCDDwzpAPF6FQl9DxRjWgbsSkxi9q8Q4346Eksg0AFXoEpAbLrqsln3jl32CMTqNupBN55OmsbsMuiH2UNlNRVPyUfTEAWtIq8udoU88JWrVjZ4wQVh2q4Ygk6dE4i8sPPwF/8F5B9jQjV05oeKVlfOaGLroaMiaOwuu1DcykAB3TV0/Dr2WOYEh7xk+oe4FRgxvn+K1UniXzrOkHkH0MqJSKl0qkZm7Ey2VGH6KfIFZC3III2qMSGDcpBjcBR1Ty/M3x2EE+qRPp2qz5cO+TTR1RxCQqGoDk22qGH9JjNoRIPZzkT7nESE0yyGWUdlbRjWwM3Ssl9hZs4Mz5/l8xn5aja5i1BktPlSc5it+dlAWXK+3/xyqOIlk980B8XQIgbIXgRPs=
