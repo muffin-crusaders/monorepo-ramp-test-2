@@ -11,7 +11,8 @@ const WebpackShellPlugin = require('webpack-shell-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
-module.exports = function(env) {
+module.exports = function(env = {}) {
+    // TODO: for production build, we just want to copy plugins over -- there is no need to wrap them as webpack entry files
     return Merge(CommonConfig(env), {
         devtool: 'source-map',
         mode: 'production',
@@ -40,7 +41,6 @@ module.exports = function(env) {
             minimizer: [
                 new TerserPlugin({
                     extractComments: true,
-                    // exclude:
                     sourceMap: true,
                     terserOptions: {
                         compress: {

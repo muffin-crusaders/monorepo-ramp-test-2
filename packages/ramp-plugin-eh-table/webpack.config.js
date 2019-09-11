@@ -44,6 +44,8 @@ module.exports = (env, argv) => ({
     optimization: {
         // setting optimization.minimizer overrides the defaults provided by webpack, so make sure to also specify a JS minimizer
         // TerserJSPlugin is used by default, so we just reusing it
-        minimizer: [new TerserJSPlugin({ extractComments: true }), new OptimizeCSSAssetsPlugin({})]
+        // NOTE: do not extract comments or minimize for now because this plugin is included directly into the ramp-core build and it will be minimized the its parent build process
+        minimize: false,
+        minimizer: [new TerserJSPlugin({ extractComments: false /* true */ }), new OptimizeCSSAssetsPlugin({})]
     }
 });

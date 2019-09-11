@@ -19,20 +19,21 @@ const babelPresets = {
 };
 
 // eslint-disable-next-line complexity
-module.exports = function(env) {
-    const geoPath = env.geoLocal
+module.exports = function(env = {}) {
+    // NOTE: [monoRAMP] no need for loading geoapi from a local folder anymore
+    /* const geoPath = env.geoLocal
         ? env.geoLocal.length > 0
             ? env.geoLocal
             : path.resolve(__dirname, '../', 'geoApi')
-        : path.resolve(__dirname, 'node_modules/geoApi');
+        : path.resolve(__dirname, 'node_modules/geoApi'); */
 
     const config = {
-        // stats: 'errors-only',
+        stats: 'errors-only',
         entry: {
             'legacy-api': path.resolve(__dirname, 'src/legacy-api.ts'),
             'rv-main': path.resolve(__dirname, 'src/app/app-loader.js'),
-            // NOTE: [monoRAMP] add a separate entry for each plugin so they are properly copied over and hot-wired
 
+            // NOTE: [monoRAMP] add a separate entry for each plugin so they are properly copied over and hot-wired
             'ramp-plugin-areas-of-interest': path.resolve(__dirname, 'node_modules/ramp-plugin-areas-of-interest'),
             'ramp-plugin-back-to-cart': path.resolve(__dirname, 'node_modules/ramp-plugin-back-to-cart'),
             'ramp-plugin-cake-export': path.resolve(__dirname, 'node_modules/ramp-plugin-cake-export'),
@@ -62,7 +63,11 @@ module.exports = function(env) {
                 },
                 {
                     test: /\.js$/,
-                    include: [path.resolve(__dirname, 'src/app'), path.resolve(__dirname, 'src/plugins'), geoPath],
+                    // NOTE: [monoRAMP] no need for loading geoapi from a local folder anymore
+                    include: [
+                        path.resolve(__dirname, 'src/app'),
+                        path.resolve(__dirname, 'src/plugins') /* , geoPath */
+                    ],
                     use: [
                         {
                             loader: 'ng-annotate-loader'
@@ -237,9 +242,10 @@ module.exports = function(env) {
         config.plugins.push(new BundleAnalyzerPlugin({ openAnalyzer: false, generateStatsFile: true }));
     }
 
-    if (env.geoLocal) {
+    // NOTE: [monoRAMP] no need for loading geoapi from a local folder anymore
+    /* if (env.geoLocal) {
         config.resolve.alias['geoApi$'] = geoPath;
-    }
+    } */
 
     return config;
 };
