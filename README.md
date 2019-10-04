@@ -131,8 +131,8 @@ We need to ferret out these implicit dependencies and make them explicit in the 
 
 # Further Tasks
 
--   implement Travis builds
--   implement Azure cloud built deployment
+-   ~~implement Travis builds~~
+-   ~~implement Azure cloud built deployment~~
 -   implement docs publishing
 -   ???
 -   ~~use geosearch as a monorepo dependency~~
