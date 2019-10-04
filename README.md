@@ -21,6 +21,38 @@ All plugins are pulled into separate packages (prefixed with `ramp-plugin`) with
 
 ## Getting Started
 
+### Creating monorepo
+To create a new RAMP monorepo, perform the following steps.
+
+Create a file `repos.txt` with the following lines:
+```
+https://github.com/fgpv-vpgf/fgpv-vpgf.git ramp packages/ramp
+https://github.com/fgpv-vpgf/geoApi.git geoapi packages/geoapi
+https://github.com/fgpv-vpgf/plugins.git plugins packages/plugins
+https://github.com/RAMP-PCAR/geosearch.git geosearch packages/geosearch
+```
+
+Clone tomono repo:
+```git
+git clone https://github.com/unravelin/tomono.git
+```
+
+Pipe the `repos.txt` file throug the script.
+```
+$ cat repos.txt | ~/tomono/tomono.sh
+```
+ This will create a `core` folder with all the repos merged as follows:
+ -   core\
+    -   packages\
+        -   ramp\
+        -   geoapi\
+        -   plugins\
+        -   geosearch\
+
+You can split or raname folder under the `packages` folder as you wish (see above how the structure I use).
+
+### Running monorepo
+
 From your shell, install Rush like this (if don't already have it):
 
 ```
